@@ -1,0 +1,257 @@
+extends ../_layout
+
+block title
+	title Purchase
+block config
+	- var main = false
+	- var pur = true
+block content
+	.wrapper.gray.page-head
+		.box
+			.content-element
+				.side-title
+					.side-title-inner
+						.side-title-title
+							h3.title.h2 Purchase
+				.plan-wrap
+					.plan-inner
+						.plan-item
+							.plan-item-inner
+								.plan-item-head
+									.plan-item-image
+										<svg xmlns="http://www.w3.org/2000/svg" width="46" height="42" viewBox="0 0 46 42"><g fill="none" fill-rule="evenodd"><g><g><g><g><path stroke="#979797" stroke-opacity=".2" d="M-140-44.5c-.82842712 0-1.5.67157288-1.5 1.5v630c0 .828427.67157288 1.5 1.5 1.5h326c.828427 0 1.5-.671573 1.5-1.5V-43c0-.82842712-.671573-1.5-1.5-1.5h-326z"/></g><g stroke="#979797"><g transform="translate(0 12)"><ellipse cx="15.3970011" cy="6.9261091" rx="7.42557249" ry="6.9261091"/><path d="M1.25752405 29.4310833c-1.81557182-8.0814873 2.9823949-12.122231 14.39390015-12.122231 11.4115052 0 16.1935422 4.0407437 14.346111 12.122231" stroke-linecap="square"/></g><g transform="translate(22 1)"><ellipse cx="8.39700107" cy="6.9261091" rx="7.42557249" ry="6.9261091"/><path d="M3.4468893 17.6529316c1.54712522-.2293862 3.28197018-.3440793 5.20453488-.3440793 11.41150522 0 16.19354222 4.0407437 14.34611102 12.122231" stroke-linecap="square"/></g></g></g></g></g></g></svg>
+									.plan-item-title
+										.text-up Personal
+								// price can be added to '.plan-item-price' container. Paste the following structure to it
+
+								//.plan-item-price-inner
+								//	.title.h2 TEXT
+								// there is no need in additional classes
+								// if u have some troubles with it. scroll to 'Support plans' section and see an example
+								//this also work for '.plan-item-price-inner' which if has no children will show white line. Example also placed in 'Support plans' section
+								.plan-item-price
+								.plan-item-descr
+									ul.plan-list.disabled
+										li.plan-list-item.text.bold Source code
+										li.plan-list-item.text.bold 3-month support
+										li.plan-list-item.text.bold 1-year updates
+									.plan-feature
+										.text Instances – 1
+										.text Users – 50
+										.text Forms - 100
+									a(href="#").btn.primary
+										span Download
+						.plan-item.item-center
+							.plan-item-inner
+								.plan-item-head
+									.plan-item-image
+										<svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="none" fill-rule="evenodd"><g><g><g><g transform="translate(-142 -39)"><use fill="#000" filter="url(#a)" xlink:href="#b"/></g><g stroke="#979797" stroke-linecap="square"><path d="M42.5205994 24.5237122V47.5H29.4901123V30.547054H17.4666748V47.5H4.50091553V24.5237122M.5 22.5l23-22m23 22l-23-22"/></g></g></g></g></g></svg>
+									.plan-item-title
+										.text-up Company
+								.plan-item-price
+								.plan-item-descr
+									ul.plan-list
+										li.plan-list-item.text.bold 3-month support
+										li.plan-list-item.text.bold 1-year updates
+									.plan-feature
+										.text Instances - 20
+										.text Users - 500
+										.text Forms - unlimited
+									a(href="#").btn
+										span Get a quote
+						.plan-item
+							.plan-item-inner
+								.plan-item-head
+									.plan-item-image
+										<svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48"><g fill="none" fill-rule="evenodd"><g><g><g><g><path stroke="#979797" stroke-opacity=".2" d="M-139-38.5c-.82842712 0-1.5.67157288-1.5 1.5v630c0 .828427.67157288 1.5 1.5 1.5h326c.828427 0 1.5-.671573 1.5-1.5V-37c0-.82842712-.671573-1.5-1.5-1.5h-326z"/></g><g><path stroke="#979797" d="M29.5205994.52371216V47.5H4.50091553V.52371216H29.5205994zM47 47.5H29.5209351V10.4888306h13.012146V47.5H47z" stroke-linecap="square"/><path fill="#979797" d="M0 47h5v1H0z"/><path fill="#9B9B9B" d="M30 16h9v1h-9v-1zm0 5h9v1h-9v-1zm0 5h9v1h-9v-1zm0 5h9v1h-9v-1zm0 5h9v1h-9v-1zm0 5h9v1h-9v-1zM17 16h9v1h-9v-1zm0 5h9v1h-9v-1zm0-10h9v1h-9v-1zm0-5h9v1h-9V6zm0 20h9v1h-9v-1zm0 5h9v1h-9v-1zm0 5h9v1h-9v-1zm0 5h9v1h-9v-1zM8 16h5v1H8v-1zm0 5h5v1H8v-1zm0-10h5v1H8v-1zm0-5h5v1H8V6zm0 20h5v1H8v-1zm0 5h5v1H8v-1zm0 5h5v1H8v-1zm0 5h5v1H8v-1z"/></g></g></g></g></g></svg>
+									.plan-item-title
+										.text-up Enterprise
+								.plan-item-price
+								.plan-item-descr
+									ul.plan-list
+										li.plan-list-item.text.bold Source code
+										li.plan-list-item.text.bold 3-month support
+										li.plan-list-item.text.bold 1-year updates
+									.plan-feature
+										.text Instances - unlimited
+										.text Users - unlimited
+										.text Forms - unlimited
+									a(href="#").btn
+										span Get a quote
+	.wrapper
+		.box
+			.content-element
+				.side-title
+					.side-title-inner
+						.side-title-title
+							h3.title.h2 Support plans
+						.side-title-text
+							.text  When purchasing DWKit, you receive a free 3-month Standard support plan. Upon its expiry, you may subscribe for our annual support plans to keep receiving DWKit updates and enjoy our customer support services.
+				.plan-wrap
+					.plan-inner
+						.plan-item
+							.plan-item-inner
+								.plan-item-head
+									.plan-item-title
+										.text-up Standard
+								.plan-item-price
+									.plan-item-price-inner
+										.title.h2 $5,000
+										.text /Year
+								.plan-item-descr
+									ul.plan-list
+										li.plan-list-item.text.bold Updates
+										li.plan-list-item.text.bold License renewal
+									.plan-feature
+										.plan-feature-row
+											.text Response time:
+											.text.bold 2 business days
+										.plan-feature-row
+											.text Resolution time:
+											.text.bold Upon availability
+										.plan-feature-row
+											.text Incidents:
+											.text.bold 4 per month
+										.plan-feature-row
+											.text Escalation:
+											.text.bold Email
+									a(href="#").btn.primary
+										span Subscribe
+						.plan-item.item-center
+							.plan-item-inner
+								.plan-item-head
+									.plan-item-title
+										.text-up Premium
+								.plan-item-price
+									.plan-item-price-inner
+										.title.h2 $8,000
+										.text /Year
+								.plan-item-descr
+									ul.plan-list
+										li.plan-list-item.text.bold Priority updates 
+										li.plan-list-item.text.bold License renewal
+									.plan-feature
+										.plan-feature-row
+											.text Response time:
+											.text.bold 1 business day 
+										.plan-feature-row
+											.text Resolution time:
+											.text.bold 10 business days 
+										.plan-feature-row
+											.text Incidents:
+											.text.bold 10 per month
+										.plan-feature-row
+											.text Escalation:
+											.text.bold Email, IMs
+									a(href="#").btn.promary
+										span Subscribe
+						.plan-item
+							.plan-item-inner
+								.plan-item-head
+									.plan-item-title
+										.text-up Custom
+								.plan-item-price
+									.plan-item-price-inner
+								.plan-item-descr
+									ul.plan-list
+										li.plan-list-item.text.bold Priority updates 
+										li.plan-list-item.text.bold License renewal
+									.plan-feature
+										.plan-feature-row
+											.text Response time:
+											.text.bold Upon demand 
+										.plan-feature-row
+											.text Resolution time:
+											.text.bold Upon demand 
+										.plan-feature-row
+											.text Incidents:
+											.text.bold Unlimited
+										.plan-feature-row
+											.text Escalation:
+											.text.bold Any
+									a(href="#").btn
+										span Get a quote
+	.wrapper.gray
+		.box
+			.content-element
+				.row.row-illustration.ill-special
+					.col-50
+						.illustration-cont.ill-5-1
+							.illustration-cont-inner
+								svg(xmlns='http://www.w3.org/2000/svg', width='281px', height='328px', viewbox='0 0 281 328')
+									style.
+										.stf0{fill:#EDF7FF;} .stf1{fill:#F24D00;}
+									g
+										g
+											g
+												g.block.block1
+													path.stf0(d='M99 1.2v179.6c0 1.1.9 2.6 2 3.2l178 102.7c1.1.7 2 .3 2-.8V106.1c0-1.1-.9-2.6-2-3.2L101 .3c-1.1-.6-2-.2-2 .9z')
+													g.block.blockg
+														g.block.blk-line
+															g.block.line1
+																path.block.blk1-2.stf1(d='M168 56.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8V82.1c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+																path.block.blk1-3.stf1(d='M221 87.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8v-40.8c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+																path.block.blk1-1.stf1(d='M114 25.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8V51.1c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+															g.block.line1.line1-1
+																path.block.blk2-2.stf1(d='M168 110.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8v-40.8c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+																path.block.blk2-3.stf1(d='M221 141.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8v-40.8c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+																path.block.blk2-1.stf1(d='M114 79.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8v-40.8c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+															g.block.line1
+																path.block.blk3-2.stf1(d='M168 164.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8v-40.8c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+																path.block.blk3-3.stf1(d='M221 195.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8v-40.8c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+																path.block.blk3-1.stf1(d='M114 133.1v40.8c0 1.1.9 2.6 2 3.2l41 23.6c1.1.7 2 .3 2-.8v-40.8c0-1.1-.9-2.6-2-3.2l-41-23.6c-1.1-.6-2-.3-2 .8z')
+												g.block.block2
+													g
+														path.stf1(d='M0 103.1v130c0 1.1.9 2.6 2 3.2L117 303c1.1.7 2 .3 2-.8v-130c0-1.1-.9-2.6-2-3.2L2 102.3c-1.1-.7-2-.3-2 .8z')
+
+					.col-50
+						.ill-content
+							.ill-content
+								h4.title.h2 Refund policy
+								p.text Refund is guaranteed up to 30 days from the date of purchase. If our product does not suit your requirements feel free to get in touch by using the contact form below. Refund is made in full except for the 5% commission for all refunds and additional $7 for wire transfer refunds withheld by the payment provider.
+	include ../includes/_form
+			//- svg(class="icon icon-drop")
+			//- 	use(xlink:href="#logo" xmlns:xlink="http://www.w3.org/1999/xlink")
+			//- svg(class="icon icon-drop")
+			//- 	use(xlink:href="#arrow" xmlns:xlink="http://www.w3.org/1999/xlink")
+			//- svg(class="icon icon-drop")
+			//- 	use(xlink:href="#dev1" xmlns:xlink="http://www.w3.org/1999/xlink")
+			//- svg(class="icon icon-drop")
+			//- 	use(xlink:href="#dev2" xmlns:xlink="http://www.w3.org/1999/xlink")
+			//- a(href="#").btn 
+			//- 	span Download
+			//- button(type="button").btn 
+			//- 	span Download
+			//- .btn.primary 
+			//- 	span Download
+			//- .btn.big.white 
+			//- 	span Send message
+			//- label.switch
+			//- 	input(type='checkbox')
+			//- 	span.slider.round
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

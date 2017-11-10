@@ -1,0 +1,54 @@
+extends ../_layout
+
+block title
+	title Demo
+block config
+	- var main = false
+	- var demo = true
+	- var cont = true
+block content
+	.wrapper.blue.page-head
+		.content-element.text-center.form-element
+			.title.h2 Contacts
+			.form-wrapper
+				.subtitle Drop us a line and we will get back to you within 24 hours to answer your questions. All submitted information will be kept confidential.
+				form.form-inner.js-validate(action="")
+					.input-row
+						input.hidden(type='text', name='checker')
+						input(type="hidden",name='uid')
+						.input-item.s-50
+							.input-wrapper.req
+								input.input-main(type="text",data-validation="length",data-validation-length='min1',data-validation-error-msg="Please, enter your name",id='nameInp')
+								label(for='#nameInp').input-label Name
+						.input-item.s-50
+							.input-wrapper.req
+								input.input-main(type="email",data-validation="email required",data-validation-error-msg="Please, enter a valid email",id='mailInp')
+								label(for='#mailInp').input-label Email 
+						.input-item.s-100
+							.input-wrapper.req
+								textarea.input-main(rows="5",data-validation="length",data-validation-error-msg="Please, enter your message",data-validation-length='min1',id='textInp')
+								label(for='#textInp').input-label Message
+					.input-footer
+						button(type='submit').btn.big.white 
+							span Send message
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

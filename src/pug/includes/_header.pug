@@ -1,0 +1,86 @@
+include _mixins.pug
+.box.box-w2
+	.header-row
+		.header-row-logo
+			if main == true
+				span.m-logo
+					svg(class="icon icon-drop")
+						use(xlink:href="#logo" xmlns:xlink="http://www.w3.org/1999/xlink")
+			else
+				a(href="/index.html").m-logo
+					svg(class="icon icon-drop")
+						use(xlink:href="#logo" xmlns:xlink="http://www.w3.org/1999/xlink")
+		.header-row-nav
+			.header-row-nav-inner
+				nav.header-nav
+					if feat == true
+						span.header-nav-item.active Features
+					else
+						a(href="/features/index.html").header-nav-item Features
+					if pur == true
+						span.header-nav-item.active Purchase
+					else
+						a(href="/purchase/index.html").header-nav-item Purchase
+					if doc == true
+						span.header-nav-item.active Documentation
+					else
+						a(href="/documentation/index.html").header-nav-item Documentation
+					
+					if cont == true
+						span.header-nav-item.active Contacts
+					else
+						a(href="/contacts/index.html").header-nav-item Contacts
+				.header-buttons
+					if demo == true
+						span.btn
+							span Demo
+					else
+						a(href="/demo/index.html").btn
+							span Demo
+					if download == true
+						span.btn.primary
+							span Download
+					else
+						a(href="/downloads/index.html").btn.primary
+							span Download
+		.header-row-menu.js-menu
+			.header-btn-inner
+				.navTrigger
+					i
+					i
+					i
+.mob-menu
+	.mob-menu-inner
+		.mob-menu-main
+			.header-nav
+				if feat == true
+					span.header-nav-item.active Features
+				else
+					a(href="/features/index.html").header-nav-item Features
+				if pur == true
+					span.header-nav-item.active Purchase
+				else
+					a(href="/purchase/index.html").header-nav-item Purchase
+				if doc == true
+					span.header-nav-item.active Documentation
+				else
+					a(href="/documentation/index.html").header-nav-item Documentation
+				if cont == true
+					span.header-nav-item.active Contacts
+				else
+					a(href="/contacts/index.html").header-nav-item Contacts
+			.header-buttons
+				if demo == true
+					span.btn
+						span Demo
+				else
+					a(href="/demo/index.html").btn
+						span Demo
+				if download == true
+					span.btn.primary
+						span Download
+				else
+					a(href="/downloads/index.html").btn.primary
+						span Download
+
+

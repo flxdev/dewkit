@@ -1,0 +1,84 @@
+extends ../_layout
+
+block title
+	title Download
+block config
+	- var main = false
+	- var demo = false
+	- var download = true
+block content
+	.wrapper.blue.page-head
+		.box
+			.page-head-content
+				h1.title.h1 Downloads
+	.wrapper.gray
+		.box
+			.content-element
+				.download-wrap
+					.download-item
+						.download-text
+							h3.title.h2 DWKit
+						.download-table
+							.table-wrapper
+								.table.table-inner
+									.table-head
+										.table-item
+											.text.bold  File
+										.table-item
+											.text.bold Release Date
+										.table-item
+									mixin cartTable(text1, text2)
+										.table-row
+											.table-item
+												.text #{text1}
+											.table-item
+												.text #{text2}
+											.table-item
+												a(href="#").text Download
+									+cartTable('MSI Installer 2.1','01/01/2017')
+									+cartTable('Source Code 2.1','01/01/2017')
+					.download-item
+						.download-text
+							h3.title.h2 Providers
+						.download-table
+							.table-wrapper
+								.table.table-inner
+									.table-head
+										.table-item
+											.text.bold  File
+										.table-item
+											.text.bold Release Date
+										.table-item
+									+cartTable('MS SQL','01/01/2017')
+									+cartTable('PostgreSQL','01/01/2017')
+					.download-item
+						.download-text
+							h3.title.h2 Samples
+						.download-table
+							.table-wrapper
+								.table.table-inner
+									.table-head
+										.table-item
+											.text.bold  File
+										.table-item
+											.text.bold Release Date
+										.table-item
+									+cartTable('General','01/01/2017')
+									+cartTable('Invoice Approval','01/01/2017')
+									+cartTable('HR','01/01/2017')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

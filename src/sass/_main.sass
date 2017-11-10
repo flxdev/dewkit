@@ -1,0 +1,4825 @@
+input[type='number']
+	-moz-appearance: textfield;
+input[type='submit']
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; 
+input::-webkit-clear-button,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+	-webkit-appearance: none;
+input[type="password"]
+	font: small-caption
+	line-height: 1.65
+input
+	box-shadow : none
+	font-family: $o
+	+rem(font-size,16px)
+	+placeholder 
+		font-family: $o
+	&::-ms-clear
+		display: none;
+svg
+	display: inline-block
+	max-width: 100%
+	max-height: 100%
+button
+	background: 0 0
+a
+	text-decoration: none
+	
+	// color: $active
+	&:not([class]):hover
+		// color: $white
+		transition: color .3s
+*
+	+box
+	-webkit-tap-highlight-color: transparent
+	+placeholder 
+		font-family: $o
+		+rem(font-size,16px)
+
+textarea
+	resize: none
+
+	+placeholder 
+		font-family: $o
+		+rem(font-size,14px)
+ul
+	li>a 
+		display: inline-block
+		width: 100%
+html
+	font-size: 16px
+	line-height: 1
+	overflow-x: hidden
+	// +r(1150)
+	// 	font-size: 15px
+
+img
+	display: block
+	max-width: 100%
+body
+	background-color: #fff
+	+box
+	+font-smoothing
+	text-rendering: optimizeLegibility
+	font-family: $o
+	min-width: 320px
+	-webkit-overflow-scrolling: touch;
+	& ::selection
+		background-color: rgba(19, 98, 226, 0.61);
+		color: $white
+	& ::-moz-selection
+		background-color: rgba(19, 98, 226, 0.61);
+		color: $white
+	&.menu-open
+		+r(915)
+			position: fixed
+		
+html,body, .out
+	width: 100%
+	height: 100%
+	&.modal_open
+		position: fixed
+.out
+	position: relative
+.page__header--wrap
+	position: fixed
+	left: 0
+	width: 100%
+	right: 0
+	top: 0
+	z-index: 20
+	visibility: hidden
+	// transform: translateX(0)
+	height: 110px
+	+r(600)
+		height: auto
+		
+.page
+	&__wrapper
+		background-color: #fff
+		display: flex
+		flex-wrap: nowrap
+		flex-direction: column
+		height: 100%
+		position: relative
+
+		&.doc
+			min-height: 100%
+			height: auto
+			+rem(padding-bottom,114px)
+			z-index: 1
+			.page__footer
+				position: absolute
+				left: 0
+				bottom: 0
+				width: 100%
+				z-index: 4
+				background-color: $graybg
+			.page__header:before
+				opacity: 1
+		&.doc2
+			.page__footer
+				background-color: $graybg
+			.page__header:before
+				opacity: 1
+	&__outer
+		width: 100%
+		display: block
+		height: 100%
+	&__header
+		display: block
+		background-color: $white
+		position: relative
+		&.stucked
+			&:before
+				opacity: 0 !important
+	&__footer
+		position: relative
+		flex: 0 0 auto
+	&__content
+		flex: 1 0 auto
+		width: 100%
+		font-size: 0
+		&.full-wrap
+			display: flex
+.btn
+	display: inline-block
+	outline: none
+	+nosel
+	cursor: pointer
+	white-space: nowrap
+	overflow: hidden
+	vertical-align: top
+	text-align: center
+	appearance: none
+	line-height: 1
+	font-family: $l
+	// font-weight: 400
+	+rem(font-size,15px)
+	border-radius: $br 
+	border: 1px solid $or 
+	color: $or
+	&:hover
+		+notouch
+			color: $white
+			span 
+				&:before
+					transform: none
+					opacity: 1
+	&:active
+		background-color: $active2
+		color: $white
+		span
+			transition: none
+			&:before
+				background-color: $active2
+	span
+		display: inline-block
+		position: relative
+		+rem(padding,11px 29px 12px)
+		color: inherit
+		z-index: 0
+		+tr(color .3s)
+		&:before
+			content: ''
+			+coverdiv
+			background-color: $or 
+			transition: transform .3s, opacity .3s
+			z-index: -1
+			opacity: 0
+			transform: scaleX(.7)
+	&.primary
+		background-color: $or
+		color: $white
+		span 
+			&:before
+				background-color: #ca4000
+		&:hover
+			+notouch
+				// color: $or 
+		&:active
+			background-color: $active
+			span
+				transition: none
+				&:before
+					background-color: $active
+	&.big 
+		span 
+			+rem(padding,24px 52px 23px)
+	&.white 
+		color: $bl
+		border-color: $white
+		background-color: $white
+		span
+			&:before
+				background-color: $bl
+		&:hover
+			+notouch
+				color: $white
+		&:active
+			span
+				&:before
+					background-color: #1b62d4
+		&.loading
+			pointer-events: none
+			span 
+				color: transparent
+				+contain
+				background-size: 35px 35px
+				background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBjbGFzcz0ibGRzLXJvbGxpbmciIHN0eWxlPSJiYWNrZ3JvdW5kOm5vbmUiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMzUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzEzNjJlMiIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxIDU2Ljk3Nzg3MTQ0IiB0cmFuc2Zvcm09InJvdGF0ZSg5NS42MTQgNTAgNTApIj4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGNhbGNNb2RlPSJsaW5lYXIiIHZhbHVlcz0iMCA1MCA1MDszNjAgNTAgNTAiIGtleVRpbWVzPSIwOzEiIGR1cj0iMXMiIGJlZ2luPSIwcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4gIDwvY2lyY2xlPjwvc3ZnPg==);
+	&.white2 
+		color: $white
+		border-color: $white
+		background-color: transparent
+		span
+			svg
+				+rem(margin-right,15px)
+				fill: $white
+				+tr(fill .3s)
+			&:before
+				background-color: $white
+		&:hover
+			+notouch
+				color: $bl
+			svg
+				fill: $bl
+		&:active
+			span
+				svg
+					transition: none
+					fill: $bl
+				&:before
+					background-color: $white
+
+.switch
+	position: relative
+	display: inline-block
+	width: 44px
+	height: 22px
+	input
+		display: none
+.slider
+	position: absolute
+	cursor: pointer
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: $or
+	-webkit-transition: .4s
+	transition: .4s
+	&:before
+		position: absolute
+		content: ""
+		height: 16px
+		width: 16px
+		left: 3.2px
+		bottom: 3px
+		background-color: white
+		-webkit-transition: .4s
+		transition: .4s
+
+input
+	&:focus + .slider
+		box-shadow: 0 0 1px #2196F3
+	&:checked + .slider:before
+		transform: translateX(22px)
+.slider.round
+	border-radius: 34px
+	&:before
+		border-radius: 50%
+
+.title
+	font-family: $l 
+	font-weight: 300
+	color: $bl
+	line-height: 1
+	&.white
+		color: $white
+	&.h1 
+		+rem(font-size,64px)
+		+rem(margin,30px 0)
+		+r(600)
+			// +rem(font-size,40px)
+			font-size: 10vw
+			line-height: 1.33;
+			+rem(margin,15px 0)
+		&.extra
+			+rem(font-size,144px)
+			font-weight: 600
+			margin-top: 0 !important
+			+r(600)
+				font-size: 22vw
+
+	&.h2
+		+rem(font-size,36px)
+		+rem(margin,0 0 50px 0)
+		+r(1024)
+			+rem(font-size,33px)
+			+rem(margin,0 0 40px 0)
+		+r(600)
+			+rem(margin,0 0 28px 0)
+	&.padleft
+		padding-left: 32.3%
+.subtitle
+	opacity: 0.7;
+	font-family: $o
+	+rem(font-size,18px)
+	line-height: 1.35
+	color: $white
+.text
+	font-family: $o
+	+rem(font-size,16px)
+	font-weight: 300;
+	line-height: 1.75;
+	color: $text
+	font-weight: 300
+	opacity: .8
+	+r(600)
+		+rem(font-size,18px)	
+		line-height: 1.67
+	&.bold
+		font-family: $l
+		line-height: 1.94
+		font-weight: 700
+		color: $blk
+	&.primary
+		+rem(font-size,20px)
+		line-height: 1.6
+		+r(600)
+			+rem(font-size,22px)
+			line-height: 1.55;
+	&.content 
+		font-family: $o
+		line-height: 1.94
+		+r(600)
+			+rem(font-size,16px)
+.box
+	width: 100%
+	+rem(max-width,1300px)
+	margin: 0 auto
+	+padlr(80px)
+	+r(1024)
+		+padlr(90px)
+	+r(801)
+		+padlr(70px)
+	+r(600)
+		+padlr(30px)
+	+r(380)
+		+padlr(20px)
+	&.box-w2
+		+rem(max-width,1440px)
+		+padlr(40px)
+		+r(1024)
+			+padlr(32px)
+		+r(600)
+			+padlr(30px)
+		+r(380)
+			+padlr(20px)
+	&.box-w3
+		+rem(max-width,1360px)
+		+padlr(40px)
+		+r(1024)
+			+padlr(32px)
+		+r(600)
+			+padlr(30px)
+		+r(380)
+			+padlr(20px)
+
+
+
+.wrapper
+	width: 100%
+	overflow: hidden
+	&.blue 
+		background-color: $bl
+		.title
+			color: $white
+		.side-title-title
+			+r(600)
+				.title
+					+rem(margin-bottom,26px)
+		.side-title-text
+			+r(600)
+				.text
+					+rem(padding-right,0px)
+		.text
+			color: rgba(255, 255, 255, 0.8);
+			a 
+				color: rgba(255, 255, 255, 0.8);
+				box-shadow:  0 -1px 0 0 $bl,  0 1px 0 0 rgba(255, 255, 255, 0.8);
+
+
+	&.gray 
+		background-color: $graybg
+	&.page-head
+		+rem(padding-top,110px)
+		+r(1024)
+			+rem(padding-top,90px)
+		+r(600)
+			+rem(padding-top,76px)	
+		&.full
+			height: 100vh
+			+r(1024)
+				+rem(height,730px)
+			+r(600)
+				+rem(height,636px)
+			+r(370)
+				+rem(height,570px)
+			.box
+				height: 100%
+				position: relative
+			.page-head-text
+				width: 60%
+				+rem(padding-bottom,67.5px)
+				// .title
+				+r(1024)
+					width: 100%
+				+r(600)
+					+rem(padding-bottom,57px)
+			.page-head-pic
+				width: 40%
+				+r(1024)
+					display: none
+.ios
+	.page-head.full
+		+screen(769,1025)
+			max-height: 93vh
+			// background-color: green
+.page-head
+	&-content
+		width: 100%
+		height: 100%
+		font-size: 0
+		display: flex
+		flex-flow: row nowrap
+		align-items: center
+	&-text
+		text-align: left
+		+rem(margin-left,1px)
+		+r(1024)
+			text-align: center
+			margin-left: 0
+		+r(600)
+			.subtitle
+				+padlr(5px)
+				+rem(font-size,20px)
+	&-arrd
+		position: absolute
+		display: inline-block
+		+rem(width,40px)
+		+rem(height,20px)
+		left: 50%
+		transform: translateX(-20px)
+		+rem(bottom,50px)
+		animation: sdb 1.5s infinite;
+	&:not(.full)
+		.page-head-content
+			.title
+				+rem(padding-bottom,57px)
+				+rem(padding-top,40px)
+				+rem(margin-left,-3px)
+
+@keyframes sdb
+	0%
+		transform: translate(-20px, 0);
+		opacity: 0;
+	50%
+		opacity: 1;
+	100%
+		transform: translate(-20px, 20px);
+		opacity: 0;		
+.page__header
+	position: relative
+	visibility: visible
+	.box
+		+rem(height,110px)
+		+tr(height .25s ease-in-out)
+		backface-visibility: hidden
+		will-change: height
+		&>div
+			+rm(1025)
+				+gpu
+		+r(1024)
+			+rem(height,90px)
+		+r(600)
+			+rem(height,76px)
+	&:before
+		content: ''
+		+tr(opacity .25s)
+		display: inline-block
+		+coverdiv
+		opacity: 0
+		z-index: -1
+		box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+
+	&.is-hidden,&.menu-open
+		// &:before
+		// 	opacity: 1
+		.box
+			+rem(height,74px)
+			+r(600)
+				+rem(height,65px)
+
+
+.header
+	&-row
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		align-items: center
+		backface-visibility: hidden
+		// +gpu
+		height: 100%
+
+		&-nav
+			+r(915)
+				display: none
+			&-inner
+				display: table
+		&-logo
+			flex-grow: 1
+	&-nav,&-buttons
+		display: table-cell
+		vertical-align: middle
+	&-buttons
+		+rem(padding-right,1px)
+		white-space: nowrap
+		// padding-left: 8.42%
+		text-align: right
+		+rem(width,325px)
+		+r(1024)
+			// +rem(padding-left,12px)
+			+rem(width,270px)
+		.btn 
+			+rem(margin-left,15px)
+
+	&-nav
+		&-item
+			display: inline-block
+			font-weight: 400
+			font-family: $l
+			+rem(font-size,16px)
+			color: $text
+			line-height: 1
+			+rem(padding-top,22px)
+			+rem(padding-bottom,20px)
+			+padlr(20px)
+			+tr(color .3s)
+			cursor: pointer
+			&:hover
+				+notouch
+					color: $menuHover
+			&.active
+				color: $menuActive
+				pointer-events: none
+			+r(1024)
+				+padlr(15px)
+				+rem(padding-top,20px)
+				// +rem(padding-top,1px)
+	&-row-menu
+		// align-self: stretch
+		height: 100%
+		+vertical
+		+rem(margin-right,-30px)
+		+rem(padding-right,30px)
+		+rem(padding-left,30px)
+		cursor: pointer
+		+rm(916)
+			display: none
+		.header-btn-inner
+			display: inline-block
+			vertical-align: middle
+			
+		&.active
+			z-index: 51
+			position: relative
+			
+			.navTrigger i 
+				&:first-child
+					animation: inT .8s forwards
+				&:nth-child(2)
+					animation: inM .8s forwards
+				&:nth-child(3)
+					animation: inBtm .8s forwards
+.m-logo
+	+rem(max-width,136px)
+	display: inline-block
+	svg
+		max-width: 100%
+		+rem(height,50px)
+		+rem(margin-left,-3px)
+		+r(600)
+			margin-left: 0
+		use 
+			display: inline-block
+			width: 100%
+
+
+.mob-menu
+	+rm(916)
+		display: none
+	position: fixed
+	top: 0
+	right: 0
+	width: 100%
+	height: 100vh
+	background-color: transparent
+	text-align: right
+	z-index: 50
+	transition: opacity .25s .2s, visibility .25s  .2s, background-color .25s 0s
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+		transition: opacity .25s 0s, visibility .25s  0s, background-color .25s 0s
+		background-color: rgba(0, 105, 223, 0.5);
+		.mob-menu-inner
+			transform: none
+			transition-delay: .25s
+		.header
+			&-nav
+				&-item
+					opacity: 1
+					transform: none
+					transition-delay: .5s
+					&:nth-child(2)
+						transition-delay: .55s
+					&:nth-child(3)
+						transition-delay: .6s
+					&:nth-child(4)
+						transition-delay: .65s
+			&-buttons
+				opacity: 1
+				transform: none
+				transition-delay: .7s
+	&-inner
+		background-color: $white
+		width: 100%
+		+rem(max-width,397px)
+		display: inline-block
+		height: 100%
+		+rem(padding-top, 70px)
+		overflow-x: hidden
+		+tr(transform .3s ease-in-out)
+		transform: translateX(100%)
+		transition-delay: 0s
+
+	&-main
+		overflow-y: auto
+		overflow-x: hidden
+		width: 100%
+		+padlr(15px)
+		+rem(padding-bottom,30px)
+		.header
+			&-nav
+				display: block
+				width: 100%
+				&-item
+					width: 100%
+					text-align: center
+					transition: opacity .25s, transform .25s ease-in-out
+					transition-delay: .3s
+					+rem(font-size,22px)
+					opacity: 0
+					transform: translateY(10px)
+			&-buttons
+				margin: 0
+				width: 100%
+				text-align: center
+				display: block
+				+rem(margin-top,70px)
+				transition: opacity .25s, transform .25s ease-in-out
+				opacity: 0
+				transform: translateY(10px)
+				transition-delay: .3s
+				.btn 
+					&:first-child
+						margin-left: 0
+				
+				
+				
+.navTrigger
+	+rem(width,31px)
+	+rem(height,19px)
+	margin: auto;
+	display: inline-block
+	vertical-align: middle
+	will-change: transform;
+	+rem(margin-top,-2px)
+	i 
+		background-color: $bl;
+		border-radius: 2px;
+		content: "";
+		display: block;
+		// overflow: hidden
+		width: 100%;
+		height: 3px;
+		&:first-child
+			animation: outT .8s backwards;
+			animation-direction: reverse;
+		&:nth-child(2)
+			margin: 6px 0;
+			animation: outM .8s backwards;
+			animation-direction: reverse;
+		&:nth-child(3)
+			animation: outBtm .8s backwards;
+			animation-direction: reverse;
+
+@keyframes inM
+	50%
+		transform: rotate(0deg)
+		opacity: 1
+	100%
+		transform: rotate(45deg)
+
+@keyframes outM
+	50%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(45deg)
+
+@keyframes inT
+	0%
+		transform: translateY(0px) rotate(0deg)
+		opacity: 1
+	50%
+		transform: translateY(9px) rotate(0deg)
+	100%
+		transform: translateY(9px) rotate(135deg)
+
+@keyframes outT
+	0%
+		transform: translateY(0px) rotate(0deg)
+	50%
+		transform: translateY(9px) rotate(0deg)
+	100%
+		transform: translateY(9px) rotate(135deg)
+
+@keyframes inBtm
+	0%
+		transform: translateY(0px) rotate(0deg)
+		opacity: 1
+	50%
+		transform: translateY(-9px) rotate(0deg)
+	100%
+		transform: translateY(-9px) rotate(135deg)
+
+@keyframes outBtm
+	0%
+		transform: translateY(0px) rotate(0deg)
+	50%
+		transform: translateY(-9px) rotate(0deg)
+	100%
+		transform: translateY(-9px) rotate(135deg)			
+.footer
+	+rem(padding-top,41px)
+	+rem(padding-bottom,39px)
+	+rem(margin-left,-1px)
+	+r(1024)
+		+rem(padding-top,30px)
+		+rem(padding-bottom,30px)
+	+r(600)
+		+clr
+	&-links
+		font-size: 0
+		text-align: center
+		&-item
+			display: inline-block
+			vertical-align: middle
+			+rem(font-size,14px)
+			font-weight: 300
+			color: $text
+			+padlr(13px)
+			+rem(padding-top,10px)
+			+rem(padding-bottom,10px)
+			+r(600)
+				text-align: left
+				float: left
+				padding-left: 0
+				width: 50%
+				&:first-child
+					width: 100%
+				&:not(a)
+					text-align: right
+					padding-right: 0
+		a 
+			color: $or
+
+.row
+	display: block
+	font-size: 0
+	+rem(margin, 0 -20px)
+	.col-100
+		width: 100%
+		display: block
+		
+	.col-50
+		display: inline-block
+		vertical-align: top
+		+padlr(20px)
+		width: 50%
+		+clr
+		+r(1024)
+			+rem(padding-top,1px)
+		+r(600)
+			width: 100%
+			padding-top: 0
+			display: block
+			+rem(margin-top,30px)
+
+			&>.text
+				margin-left: 0!important
+				margin-right: 0!important
+		.text
+			&:not(:first-child)
+				+rem(margin-top,20px)
+			+r(1024)
+				padding-right: 3%
+		.btn 
+			float: left
+			+rem(margin-top,30px)
+		.text.primary
+			&:first-child
+				+rem(margin-top,2px)
+				+r(1024)
+					+rem(margin-top,1px)
+		.text
+			padding-right: 8%
+			+r(600)
+				padding-right: 10%
+		&:nth-child(2)
+			.text
+				padding-right: 13.5%
+				+r(1024)
+					padding-right: 10.5%
+					+rem(margin-left,-7.5px)
+				+r(600)
+					padding-right: 8%
+
+
+
+
+// для широкого блока
+.box-w3
+	.row .col-50
+		+r(1024)
+			.text.primary
+				padding-right: 15%
+		+r(600)
+			.text.primary
+				padding-right: 5%
+		&:nth-child(2)
+			.text
+				padding-right: 16%
+				+r(1024)
+					padding-right: 10%
+				+r(600)
+					padding-right: 5%
+.box:not(.box-w3)
+	.row .col-50
+		&:first-child
+			+r(600)
+				.text
+					&:first-child
+						+rem(padding-top,10px)
+.content
+	&-element
+		+rem(padding,110px 0 130px)
+		+r(1024)
+			+rem(padding,92px 0 110px)	
+		+r(600)
+			+rem(padding,61px 0 70px)	
+.card
+	&-wrapper
+		text-align: center
+		+rem(margin-top,95px)
+		+r(1024)
+			+rem(margin-top,67px)
+		+r(600)
+			+rem(margin-top,62px)	
+		&-inner
+			+rm(601)
+				+rem(margin-left,-52px)
+				+rem(margin-right,-52px)
+
+			// +r(801)
+			// 	+rem(margin-left,-px)
+			// 	+rem(margin-right,-px)
+		&-line 
+			// +justify
+			+rem(max-width,930px)
+			+rem(margin, 18px auto 0)
+			text-align: left
+			+clr
+			// +r(1024)
+			// 	+rem(margin, 18px -20px 0)
+			+r(1024)
+				+rem(margin, 18px -52px 0)
+			+r(600)
+				display: none
+			.text
+				white-space: nowrap
+				display: inline-block
+				&:nth-child(2)
+					float: right
+					
+			.gradient
+				+rem(margin-top,3px)
+				display: block
+				width: 100%
+				height: 3px
+				border-radius: $br
+				background-image: linear-gradient(to right, #1362e2, #f24d00);
+				float: right
+				
+				
+	&-elem
+		display: inline-block
+		vertical-align: middle
+		+rem(max-width,300px)
+		text-align: center
+		+rem(height, 360px)
+		+vertical
+		+rem(padding-top,10px)
+		width: 33.3%
+		+r(801)
+			+rem(max-width,276px)
+			+rem(height, 300px)
+		+r(600)
+			display: block
+			width: 100%
+			margin: 0 auto
+			padding-top: 0
+		&-inner
+			width: 100%
+			display: inline-block
+			vertical-align: middle
+			+rem(max-width,190px)
+		&:not(.center)
+			border: $bb
+		&.center
+			+rem(height, 440px)
+			+rem(padding-bottom,3px)
+			+rem(max-width,330px)
+			padding-top: 0
+			+r(801)
+				+rem(height, 380px)
+
+			+r(600)
+				+rem(max-width,300px)
+				+rem(height, 408px)
+				+rem(padding-bottom,13px)
+			background-color: $white
+			box-shadow: 0 4px 24px 0 rgba(45, 45, 45, 0.2);
+			.card-elem-people
+				+rem(margin,90px 0 74px 0)
+				+r(801)
+					+rem(margin,70px 0 54px 0)
+				+r(600)
+					+rem(margin,68px 0 47px 0)
+			.card-elem-title
+				+rem(padding-right,5px)
+				svg
+					+rem(max-width,145px)
+		&:first-child
+			.card
+				&-elem
+					&-title
+						+rem(margin-left,30px)
+		&:nth-child(3)
+			+r(600)
+				.card
+					&-elem
+						&-inner
+							+rem(padding-top,5px)
+						&-people
+							+rem(margin,41px 0 30px 0)
+						&-text
+							.text
+								+rem(padding-top,0px)
+
+		&-title
+			svg
+				display: block
+				margin: 0 auto
+				+rem(max-width,170px)
+				+rem(max-height,50px)
+		&-people
+			font-size: 0
+			width: 100%
+			+rem(margin,44px 0 31px 0)
+			+r(801)
+				+rem(margin,38px 0 27px 0)
+			+r(600)
+				+rem(margin,30px 0 29px 0)
+			&-item
+				display: inline-block
+				vertical-align: bottom
+				+rem(height,62px)
+				+rem(width,64px)
+				overflow: hidden
+				svg
+					margin-top: 1.2px
+				&:nth-child(2)
+					+rem(margin-left,1px)
+		&-text
+			.text
+				line-height: 1.5
+				+r(600)
+					+rem(font-size,18px)
+
+.side-title
+	&-inner
+		font-size: 0
+		+rem(margin,0 -20px)
+	&-title,&-text
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		+rem(padding,0 20px)
+		+r(600)
+			width: 100%
+			// +rem(padding-top,10px)
+	&-text
+		// +rm(601)
+		// 	.text
+		// 		// +rem(margin-left,-20px)
+		// 		+rem(padding-top,7px)
+		// 		padding-right: 7%
+		.text
+			position: relative
+			z-index: 1
+		+rm(1025)
+			+rem(margin-top,6px)
+			padding-right: 5%
+		+r(1024)
+			.text
+				+rem(margin-left,-6px)
+				+rem(padding-right,20px)
+				+rem(padding-top,7px)
+		+r(600)
+			.text
+				margin-left: 0
+	&-title
+		&:only-child
+			.title
+				+rem(margin-bottom,0px)
+		.title
+			+rem(margin-top,-4px)
+			line-height: 1.3;
+			+r(1024)
+				+rem(margin-top,-2px)
+				+rem(margin-left,-3px)
+				+rem(max-width,320px)
+			+r(600)
+				// +rem(margin-top,-1px)
+				+rem(margin-left,-3px)
+				+rem(margin-bottom,33px)
+.text-up
+	+rem(font-size,22px)
+	font-weight: 300
+	line-height: 1.64
+	+tr(color .3s)
+	color: $text
+	+rem(letter-spacing,-0.6px)
+	+r(440)
+		+rem(font-size,18px)
+.tabs-head
+	.tabs-item
+		cursor: pointer
+.tabs-cont,.tabs-body
+	backface-visibility: hidden
+	+gpu
+.whoare
+	&-wrapper
+		+rem(margin-top,-32px)
+		position: relative
+		+rem(padding-bottom,27px)
+		+r(1024)
+			padding-bottom: 0
+			+rem(margin-bottom,-3px)
+	&-inner
+		+rem(padding-top,148px)
+		position: relative
+		+clr
+		+r(1024)
+			+rem(margin-top,-50px)
+		+r(600)
+			+rem(margin-top,-20px)
+	&-head
+		position: absolute
+		left: 0
+		right: 0
+		+rem(top,73px)
+		+rem(height,74px)
+		text-align: center
+		display: inline-block
+		width: 100%
+		z-index: 2
+		// +r(1024)
+		// 	+rem(top,54px)
+		+r(600)
+			+rem(top,65px)
+			+rem(height,60px)	
+			&:not(.is_stuck)
+				.whoare-head-inner
+					+rem(margin-left,-15px)
+					+rem(margin-right,-15px)
+		&.is_stuck
+			width: 100% !important
+			position: fixed
+			.whoare-head-inner
+				&:after
+					opacity: 1
+			.tabs-item
+				&:first-child
+					&:before
+						opacity: 1
+
+		&-inner
+			position: relative
+			height: 100%
+			+vertical
+			+r(376)
+				+rem(padding-left,5px)
+			&:after
+				content: ''
+				display: inline-block
+				width: 100%
+				background-color: $graybg
+				// box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.06);
+				position: absolute
+				left: 0
+				right: 0
+				top: 0
+				bottom: 0
+				z-index: -1
+				+tr(opacity .3s)
+				+gpu
+				opacity: 0
+
+		.tabs-item,.switch
+			display: inline-block
+			vertical-align: middle
+		.tabs-item
+			&:first-child
+				&:before
+					content: ''
+					display: inline-block
+					position: absolute
+					left: 0
+					right: 0
+					bottom: 0px
+					height: 10px
+					z-index: -1
+					box-shadow: 0 2px 20px 0 rgba(0,0,0,.15);
+					+tr(opacity .3s)
+					opacity: 0
+			.text-up
+				white-space: nowrap
+				+r(370)
+					+rem(font-size,15px)
+			&:first-of-type
+				width: 50%
+				+rem(padding-right,52px)
+				text-align: right
+				+r(600)
+					width: 55%
+				+r(440)
+					+rem(padding-right,48px)
+				
+			&:last-of-type
+				width: 50%
+				text-align: left
+				+rem(padding-left,52px)
+				+r(600)
+					width: 45%
+					+rem(padding-left,35px)
+				+r(440)
+					+rem(padding-left,30px)
+				+r(370)
+
+		.tabs-item
+			&.active
+				.text-up
+					color: $or
+		.switch
+			+vcenter
+			+r(600)
+				transform: translateY(-50%) translateX(-25%)
+
+	&-cont 
+		display: block
+		+rem(max-width,1055px)
+		margin: 0 auto
+		+r(1024)
+			+padlr(23px)
+		+r(996)
+			+padlr(0)
+	&-elem
+		+rem(height,357px)
+		+r(1024)
+			+rem(height,383px)
+		+r(600)
+			height: auto
+			
+		&:not(:last-child)
+			+rem(margin-bottom,52px)
+			+r(1024)
+				+rem(margin-bottom,2px)
+			+r(600)
+				+rem(margin-bottom,0px)
+				
+		+rm(1025)
+			&:nth-child(2):not(:last-child)
+				+rem(margin-bottom,71px)
+			&:nth-child(3):not(:last-child)
+				+rem(margin-bottom,57px)
+			&:nth-child(4):not(:last-child)
+				+rem(margin-bottom,23px)
+			&:nth-child(5):not(:last-child)
+				+rem(margin-bottom,32px)
+		+screen(600,1024)
+			&:nth-child(3):not(:last-child)
+				+rem(margin-bottom,50px)
+			&:nth-child(4):not(:last-child)
+				+rem(margin-bottom,30px)
+			&:nth-child(5):not(:last-child)
+				+rem(margin-bottom,0px)
+
+		&-inner
+			height: 100%
+			font-size: 0
+			width: 100%
+			+clr
+			+r(600)
+				+rem(margin-bottom,-10px)
+		&:nth-child(odd)
+			+rm(601)
+				.whoare-pic
+					float: right
+				.illustration-cont
+					text-align: right
+						
+
+		&:nth-child(even)
+			+rm(601)
+				.illustration-cont
+					text-align: left
+			.whoare-text
+				&-inner
+					+rem(margin-right,-15px)
+					+rem(margin-left,-3px)
+				// padding-right: 5px
+	&-pic,&-text
+		float: left
+		height: 100%
+		+vertical
+		+r(600)
+			display: block
+			width: 100%
+		&-inner
+			display: inline-block
+			vertical-align: middle
+			text-align: left
+			+r(600)
+				.illustration-cont-inner
+					margin: 0!important
+					+rem(padding-top,10px)
+					// +rem(padding-bottom,10px)
+	&-pic
+		width: 59%
+		+r(600)
+			+rem(margin-bottom,20px)
+			// +rem(height,0px)
+			height: auto
+			div
+				height: 100%
+		&-inner
+			height: 100%
+			width: 100%
+			
+	&-text
+		width: 41%
+		.text.bold
+			+rem(margin-bottom,20px)
+		+r(600)
+			+rem(margin-bottom,50px)
+			.text
+				+rem(padding-right,38px)
+
+.feature-tabs
+	+rem(margin-top,88px)
+	font-size: 0
+	+clr
+	+r(1100)
+		+rem(margin-top,60px)
+	+r(600)
+		+rem(margin-top,48px)
+	&-head,&-body
+		display: inline-block
+		float: left
+		+rem(height,410px)
+		+r(1100)
+			+rem(height,350px)
+		+r(1000)
+			height: auto
+			
+	&-head
+		width: 45%
+		// height: 100%
+		+vertical
+		text-align: left
+		// +rem(padding-bottom,23px)
+		+r(910)
+			width: 40%
+		+r(600)
+			width: auto
+			display: block
+			height: auto
+
+			
+		&-inner
+			+rem(margin-right,-57px)
+			display: inline-block
+			width: 100%
+			vertical-align: middle
+			+r(1220)
+				+rem(margin-right,-37px)
+			+r(600)
+				+rem(margin-right,-20px)
+				width: auto
+		.tabs-item
+			
+			display: inline-block
+			vertical-align: top
+			width: 50%
+			+rem(padding-right,57px)
+			+rem(margin-bottom,24px)
+			+rem(margin-top,4px)
+			+r(1220)
+				+rem(padding-right,37px)
+			+r(1100)
+				+rem(min-width,237px)
+			+r(1024)
+				+rem(margin-bottom,14px)
+				+rem(margin-top,0px)
+			+r(600)
+				min-width: 0
+				+rem(padding-right,20px)
+				+rem(margin-bottom,0px)
+			.text-up
+				position: relative
+				color: rgba(255, 255, 255, 0.7);
+				
+				transition: color .3s, font-weight .3s
+				white-space: nowrap
+				+rem(margin-left,-.5px)
+				+rem(padding,14px 0)
+				+r(341)
+					+rem(font-size,16px)
+				.span-main
+					display: inline-block
+					width: 100%
+					height: 100%
+					+rem(height,36px)
+					overflow: hidden
+				.span-inner
+					display: inline-block
+					width: 100%
+					height: 100%
+					position: relative
+					+tr(transform .3s ease-in-out)
+					&:before
+						content: attr(data-hover)
+						display: inline-block
+						font-weight: 500
+						color: $white
+						position: absolute
+						left: 0
+						top: 100%
+				&:before,&:after
+					content: ''
+					position: absolute
+					right: 0
+					// right: 0
+					width: 100%
+					left: auto
+					top: 0
+					z-index: 1
+					background-color: rgba(255, 255, 255, 0.7);
+					height: 1px
+				&:after
+					height: 3px
+					top: -1px
+					// right: auto
+					width: 0
+					z-index: 2
+					background-color: $white
+					// transform-origin: left center
+					// transform: scaleX(0)
+					+tr(width .3s ease-in-out)
+			&.active
+				.text-up
+					// color: #fff
+					// font-weight: 500
+					&:after
+						width: 100%;
+						left: 0;
+						right: 0;
+				.span-inner
+					transform: translateY(-100%)
+			&:hover:not(.active)
+				+notouch
+					.text-up
+						color: $white
+
+	&-body
+		width: 55%
+		+r(910)
+			width: 60%
+			.illustration-cont-text
+				width: 110%
+				font-size: 0
+			.ill-desc
+				position: static
+				display: inline-block
+				vertical-align: top
+				width: 50%
+				white-space: normal
+				text-align: left
+				+rem(margin-bottom,10px)
+				+rem(padding-right,10px)
+				&:last-of-type
+					+rem(margin-bottom,30px)
+				.text
+					white-space: normal
+					padding: 0
+					margin: 0
+					text-align: left
+					float: none
+					+rem(font-size,16px)
+				.radius-outer
+					display: none
+		+r(700)
+			.illustration-cont-text
+				width: 100%
+		+r(600)
+			width: 100%
+			svg 
+				width: auto !important
+
+				
+					
+
+.block-logos
+	.col-50
+		+vertical
+		vertical-align: middle
+		.text
+			text-align: left
+			+rm(1025)
+				padding-right: 14%
+			+r(600)
+				// +rem(margin-top,10px)
+				padding-right: 0
+	&.block-logos-v2
+		.text
+			+rm(1025)
+				padding-right: 5%
+		.block-logos-logos-inner
+			+rm(601)
+				+rem(margin-top,-70px)
+			+r(600)
+				.logo-item
+					width: 50%
+					text-align: left
+					+padlr(20px)
+	&-logos
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		+rem(padding-right,10px)
+		text-align: left
+		&-inner
+			+rem(margin-right,-53px)
+			+r(1340)
+				+rem(margin-left,-33px)
+			+r(1170)
+				+rem(margin-left,-5px)
+				+rem(margin-right,-33px)
+			+r(600)
+				+rem(margin, 0 -20px)
+				width: auto
+		.logo-item
+			display: inline-block
+			vertical-align: middle
+			// width: 20%
+			text-align: left
+			+rem(margin-right,53px)
+			+rem(margin-top,8px)
+			+rem(margin-bottom,8px)
+			+r(1340)
+				+rem(margin-right,40px)
+			+r(1024)
+				margin-right: 14.5%
+			+r(600)
+				text-align: center
+				margin-left: 0
+				margin-right: 0
+				padding-left: 9%
+				padding-right: 6%
+			+r(476)
+				max-width: 40%
+				padding-left: 5%
+				padding-right: 5%
+			svg
+				max-width: 100%
+				overflow: visible
+
+.parnters-slider
+	&-wrap
+		+rem(margin,0 -45px)
+		+rem(padding-top,80px)
+		+rem(padding-bottom,80px)
+		+r(1450)
+			+rem(margin,0 -35px)
+		+r(1024)
+			+rem(margin,0 -15px)
+			+rem(padding-top,63px)
+			+rem(padding-bottom,67px)
+		+r(600)
+			+rem(padding-top,50px)
+			+rem(padding-bottom,46px)
+		+r(480)
+			+rem(margin,0 -11px)	
+		&-inner
+	&-item
+		display: inline-block !important
+		vertical-align: middle
+		float: none
+		text-align: center
+		+r(480)
+			+padlr(11px)
+		svg,img
+			display: inline-block
+			max-width: 100%
+			overflow: visible
+			+rem(max-width,149px)
+			+r(1024)
+				+rem(max-width,128px)
+			+r(480)
+				max-width: 100%
+				width: 100%
+				// max-height: 30px!important
+		img
+			// +rem(max-width,122px)
+			+r(480)
+				+rem(max-height,29px)
+.text-center
+	text-align: center
+.side-colwrap
+	+rem(max-width,830px)
+	width: 100%
+	font-size: 0
+	margin: 0 auto
+	+r(1024)
+		+rem(max-width,730px)
+	&-left,&-right
+		display: inline-block
+		vertical-align: top
+		min-height: 1px
+		+r(600)
+			width: 100%
+	&-left
+		+rem(width,215px)
+		+rem(padding-right,15px)
+		+r(1024)
+			+rem(padding-right,10px)
+	&-right
+		width: calc(100% - 13.4375rem)
+		+r(1024)
+			+rem(margin-left,-1px)
+		+r(600)
+			.title,.dots-wrap
+				+rem(max-width,300px)
+				display: block
+				margin: 0 auto
+		+r(360)
+			.title,.dots-wrap
+				+rem(max-width,270px)
+			// .dots-wrap
+			// 	padding-left: 18%
+.feedback-slider
+	display: block
+	width: 100%
+	+rem(max-width,1060px)	
+	margin: 0 auto
+	+rem(padding-top,31px)
+	+r(1024)
+		+rem(padding-top,22px)
+	+r(900)
+		width: auto
+		+rem(margin,0 -50px)
+	+r(600)
+		margin: 0
+		+rem(margin,30px -25px 0)
+		// +padlr(10px)
+	&-inner
+		font-size: 0
+		position: relative
+		+r(900)
+			+padlr(50px)
+		+r(600)
+			+padlr(0)
+		.arrows-wrap
+			+rem(top,60px)
+			+r(1024)
+				+rem(left,25px)
+				+rem(right,25px)
+			+r(600)
+				+rem(left,25px)
+				+rem(right,25px)
+				+rem(top,180px)
+			+r(420)
+				left: 3%
+				right: 3%
+			+r(360)
+				left: 4%
+				right: 4%	
+		.dots-wrap
+			+rem(margin-top,48px)
+			+r(1024)
+				+rem(margin-left,-3px)
+			+r(600)
+				+rem(margin-top,15px)
+			.slick-dots
+				text-align: left
+			// 	padding-left: 30.9%
+
+	&-item
+		+r(600)
+			// +padlr(80px)
+			// padding-left: 5.9%
+			// padding-right: 5.9%
+			.side-colwrap
+				+rem(max-width,305px)
+				display: block
+				margin: 0 auto
+		+r(360)
+			.side-colwrap
+				+rem(max-width,270px)
+				.feedback-slider-item-image
+					+rem(width,95px)
+					+rem(height,95px)
+				.feedback-slider-item-name
+					padding-left: 6%
+		.side-colwrap
+
+			&-left
+				font-size: 0
+				.text
+					&:not(.bold)
+						+rem(font-size,14px)
+						+rem(letter-spacing,-0.2px)
+						+r(360)
+							+rem(font-size,13px)
+					&.bold
+						+rem(margin-bottom,3px)
+				+r(600)
+					+clr
+					padding-right: 0
+					.text
+						text-align: left
+			&-right
+				+rem(margin-top,-2px)
+				+rem(padding-right,20px)
+				+r(1024)
+					+rem(padding-bottom,10px)
+				+r(600)
+					padding-right: 0
+					+rem(margin-top,25px)
+					margin-left: 0
+					.text
+						margin-left: 0
+						padding-left: 2px
+						&.content 
+							+rem(margin-top,-5px)
+							+rem(margin-right,-10px)
+				+r(360)
+					.text
+						&.content 
+							margin-right: 0
+
+				.text.bold
+					+rem(max-width,480px)
+					+rem(margin-bottom,20px)
+					+r(600)
+						line-height: 1.78
+		&-image
+			+rem(width,110px)
+			+rem(height,110px)
+			border-radius: 50%
+			overflow: hidden
+			display: inline-block
+			background-color: $graybg
+			+rem(margin-bottom,10px)
+			img
+				max-width: 100%
+				max-height: 100%
+				margin: 0 auto
+				border-radius: 50%
+				overflow: hidden
+		&-image,&-name
+			+r(600)
+				display: inline-block
+				vertical-align: top
+				float: left
+				
+		&-name
+			+r(600)
+				+rem(height,110px)
+				+vertical
+				padding-left: 8%
+				width: calc(100% - 6.875rem)
+				+rem(margin-top,-3px)
+				&-inner
+					display: inline-block
+					vertical-align: middle
+			+r(360)
+				+rem(height,95px)
+				width: calc(100% - 5.9375rem)
+			+r(360)
+				.text
+					+rem(font-size,16.5px)
+					line-height: 1.45
+
+				
+
+
+		// &-content
+		// 	width: calc(100% - 13.4375rem)
+
+.arrows-wrap
+	+rem(height,40px)
+	font-size: 0
+	visibility: hidden
+	position: absolute
+	left: 0
+	right: 0
+	z-index: 1
+	+r(360)
+		+rem(height,30px)
+		&>.slick-arrow
+			+rem(width,15px)
+	&>.slick-arrow
+		height: 100%
+		+clr
+		position: static
+		font-size: 0
+		+rem(width,20px)
+		margin: 0
+		visibility: visible
+		// background-color: red
+		svg
+			+rem(max-height,40px)
+		&.slick-disabled
+			opacity: .5
+			pointer-events: none
+		&:active
+			svg
+
+				g 
+					fill: #9d9d9d !important
+		&:before
+			display: none
+		&.slick-next
+			float: right
+		&.slick-prev
+			transform: scale(-1,1)
+.dots-wrap
+	.slick-dots
+		position: static
+		width: 100%
+	ul 
+		text-align: center
+		+rem(margin-bottom,-10px)
+		li
+			&.slick-active
+				button
+					background: none
+					&:before
+						background-color: $or
+
+			// +rem(padding,10px)
+			button
+				box-shadow: none
+				background: none
+				+rem(padding-right,15px)
+				+rem(padding-top,10px)
+				+rem(padding-bottom,10px)
+				width: auto
+				height: auto
+				&:before
+					content: ''
+					display: inline-block
+					+rem(width,6px)
+					+rem(height,6px)
+					background-color: $dots
+					border-radius: 50%
+
+			
+.form
+	&-wrapper
+		+rem(max-width,697px)
+		margin: 0 auto
+		+r(1024)
+			+rem(max-width,632px)
+		+r(600)
+			+rem(max-width,350px)
+		.subtitle
+			font-weight: 300
+			+rem(max-width,610px)
+			margin: 0 auto
+			+rem(font-size,16px)
+			line-height: 1.75
+			+r(600)
+				+rem(font-size,18px)
+				+rem(padding-top,10px)
+				// +rem(max-width,340px)
+				// +rem(margin,0-10px)
+	&-inner
+		+rem(margin-top,60px)
+		+r(1024)
+			+rem(margin-top,51px)
+		+r(600)
+			+rem(margin-top,39px)
+		&.loading
+			.input-main
+				pointer-events: none
+				opacity: .8
+	&-element
+		+r(600)
+			.title
+				+rem(padding-top,10px)
+.hidden
+	display: none
+.input
+	&-footer
+		text-align: right
+		+rem(margin-top,6px)
+		+r(600)
+			+rem(margin-top,15px)
+	&-row		
+		+rem(margin-right,-31px)
+		font-size: 0
+	&-item
+		display: inline-block
+		vertical-align: top
+		+rem(padding-right,31px)
+		+rem(margin-bottom,19px)
+		+r(600)
+			+rem(margin-bottom,30px)
+		&.s-50
+			width: 50%
+			+r(630)
+				width: 100%
+		&.s-100
+			width: 100%
+	&-wrapper
+		width: 100%
+		display: inline-block
+		
+		position: relative
+		+tr(border .3s)
+		
+		text-align: left
+		z-index: 0
+		// overflow: hidden
+		textarea
+			line-height: 1.35
+			+rem(padding-bottom,12px)
+			+rem(min-height,151px)
+		.form-error
+			color: #ff0000;
+			position: absolute
+			+rem(right,12px)
+			+rem(top,10px)
+			z-index: 1
+			+tr(opacity .3s)
+		&.has-error
+			
+			.input-main
+				border-color: #ff0000
+				&:not(:focus)
+					background-color: #fefefe
+					box-shadow: 0 4px 14px 0 #003386;
+
+	&-main
+		background: 0 0
+		width: 100%
+		display: inline-block
+		+rem(font-size,16px)
+		color: #465662
+		line-height: 1
+		font-family: $o
+		+rem(padding,32px 24px 9px)
+		font-weight: 300
+		position: relative
+		+tr(all .3s)
+		border: 1px solid  rgba(255, 255, 255, 0.7);
+		+rem(border-radius,2px)
+
+		&:focus
+			background-color:  #fefefe
+			box-shadow: 0 4px 14px 0 #003386;
+			&+.input-label
+
+	&-label
+		color: #999; 
+		+rem(font-size,16px)
+		font-weight: 300;
+		position: absolute;
+		pointer-events: none;
+		color: rgba(255, 255, 255, 0.7);
+		+rem(top,24px)
+		+rem(left,24px)
+		transition: 0.2s ease all; 
+		z-index: 1
+
+.input-main:focus ~ .input-label,.input-wrapper.has-success .input-label,.form-error,.input-wrapper.has-error .input-main:focus ~ .input-label
+	+rem(top,10.5px)
+	+rem(font-size,12px)
+	color: #97a3b4;
+.input-main:focus,.input-wrapper.has-success .input-main,.input-wrapper.has-error .form-error
+	opacity: 1
+.input-main:focus ~  .form-error
+	// opacity: 0
+// .input-wrapper.has-error .input-main:not(:focus)
+// 	color: #fefefe
+
+.input-wrapper.has-error .input-label
+	+rem(font-size,12px)
+	color: #97a3b4;
+	+rem(top,10.5px)
+.input-wrapper.has-success .input-main
+	background-color:  #fefefe
+
+				
+
+.illustration
+	&-cont
+		width: 100%
+		height: 100%
+		+vertical
+		backface-visibility: hidden
+		+r(600)
+			width: auto
+			opacity: 1 !important
+			transform: none !important
+		// &:not(.active)
+		// 	transition-delay: 0s
+		// 	transition-duration: 0s
+		// 	.block
+		// 		transition-delay: 0s
+		// 		transition-duration: 0s
+		&-inner
+			position: relative
+			width: 100%
+			// height: 0%
+			display: inline-block
+			vertical-align: middle
+			perspective(500px)
+			svg
+				overflow: visible
+				transform-origin: 50%
+				+tr(fill-opacity .3s)
+				backface-visibility: hidden
+				pointer-events: none
+				+r(600)
+					width: 100%
+					max-width: 100%
+			.block
+				transform-origin: 50%
+				transition: transform .4s cubic-bezier(0.12, 0.4, 0.58, 1), opacity .3s ,fill-opacity .3s
+				+r(600)
+					opacity: 1 !important
+					transform: none !important
+					animation: none !important
+		&-text
+			.ill-desc
+				.text
+					+tr(color .2s)
+				&:hover
+					.text
+						color: $white
+					.radius-inner
+						border-color: $white
+
+
+
+				
+
+
+
+
+.ill-1
+	&:not(.active)
+		.block1
+			opacity: 0
+		.block2
+			transform: scale(1.15) translateX(50px) translateY(-20px)
+			// transform: perspective(500px) translate3d(40%,5%,-1)
+			opacity: 0
+			
+		.block3
+			opacity: 0
+			transform: scale(1.25) translateX(60px) translateY(-30px)
+			
+	.illustration-cont-inner
+		+rem(max-width,250px)
+		margin-right: 12.5%
+		margin-bottom: -7%
+		+r(1024)
+			margin-right: 8.5%
+			margin-bottom: 2%
+	.block1
+		transition-delay: 0s
+	.block2
+		transition-delay: .1s
+	.block3
+		transition-delay: .2s
+.ill-1-1
+	&:not(.active)
+		.block1
+			opacity: 0
+		.block2
+			transform: scale(1.15) translateX(-50px) translateY(-20px)
+			// transform: perspective(500px) translate3d(40%,5%,-1)
+			opacity: 0
+			
+		.block3
+			opacity: 0
+			transform: scale(1.25) translateX(-60px) translateY(-30px)
+			
+	.illustration-cont-inner
+		+rem(max-width,250px)
+		margin-right: 12.5%
+		margin-bottom: -7%
+		+r(1024)
+			margin-right: 8.5%
+			margin-bottom: 2%
+	.block1
+		transition-delay: 0s
+	.block2
+		transition-delay: .1s
+	.block3
+		transition-delay: .2s
+.ill-2
+	.illustration-cont-inner
+		+rem(max-width,200px)
+		margin-left: 18%
+		margin-bottom: -6.5%
+		+r(1024)
+			margin-left: 13.5%
+			margin-bottom: 8%
+	+tr(opacity .32s)
+	opacity: 0	
+	&.active
+		opacity: 1
+		transition-delay: .2s
+		.block3
+			animation: Ill2-1 1.8s .0s forwards
+		.block4
+			animation: Ill2-2 1.9s .0s forwards
+		.block2-2
+			transition-delay: 1.7s
+			opacity: 1	
+		.block2
+			transition-delay: 1.2s
+
+	&:not(.active)
+		transition-delay: 0s
+		.block
+				overflow: visible	
+		.block3
+			transform: translateY(90px) translateX(-10px) scale(.98)
+
+		.block2
+			transform: translateY(-100px)
+		.block2-2
+			opacity: 0
+
+@keyframes Ill2-1
+	0%
+		transform: translateY(90px) translateX(-10px) scale(.98)
+	25%
+		transform: translateY(90px) translateX(-10px) scale(.98)
+	60%
+		transform: translateY(90px) translateX(0px) scale(1)
+	75%
+		transform: translateY(0px) translateX(0px) scale(1)
+	100%
+		transform: translateY(00px) translateX(0px) scale(1)
+@keyframes Ill2-2
+	0%	
+		opacity: 0
+	25%
+		opacity: 0
+	60%
+		opacity: 1
+	85%
+		opacity: 1
+	100%
+		opacity: 0
+
+.main-ill
+	&:not(.active)
+		.block
+			opacity: 0
+		.block1
+			transform: translate3d(0,-60px,0)
+		.block2
+			transform: translate3d(-60px,-20px,0)
+		.block3
+			transform: translate3d(60px,-20px,0)
+		.block4
+			transform: translate3d(-90px,30px,0)
+		.blockCenter
+			transform: translate3d(0,10px,0)
+		.block5
+			transform: translate3d(90px,30px,0)
+		.block6
+			transform: translate3d(-70px,70px,0)
+		.block7
+			transform: translate3d(-40px,120px,0)
+		.block8
+			transform: translate3d(40px,120px,0)
+		.block9
+			transform: translate3d(70px,70px,0)
+	&.active
+		.block
+
+		.blockCenter
+			transition: transform 1s cubic-bezier(0.42, 0, 0.56, 1), opacity 1s cubic-bezier(0.42, 0, 0.56, 1)
+		.block:not(.blockCenter)
+			transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1)
+			transition-delay: .5s
+.main-ill2
+	&:not(.active)
+		.block
+			opacity: 0
+		.block2
+			transform: translate3d(30px,-40px,0)
+		.block3
+			transform: translate3d(60px,0px,0)
+		.block4
+			transform: translate3d(-60px,0px,0)
+		.blockCenter
+			transform: translate3d(0,10px,0)
+		.block5
+			transform: translate3d(-30px,-40px,0)
+		.block6
+			transform: translate3d(20px,50px,0)
+		.block7
+			transform: translate3d(-20px,50px,0)
+	&.active
+		.block
+
+		.blockCenter
+			transition: transform 1s cubic-bezier(0.42, 0, 0.56, 1), opacity 1s cubic-bezier(0.42, 0, 0.56, 1)
+		.block:not(.blockCenter)
+			transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1)
+			transition-delay: .5s
+.ill-3
+	.illustration-cont-inner
+		+rem(max-width,240px)
+		margin-right: 12.5%
+		margin-bottom: -6.3%
+		+r(1024)
+			margin-right: 5.5%
+			margin-bottom: -5.3%
+	&.active
+		.block1
+			transition-delay: .25s
+		.block2
+			transition-delay: .5s
+		.block3
+			transition-delay: .75s
+	&:not(.active)
+		.block1
+			opacity: 0
+			
+		.block2
+			transform: translateX(50px) translateY(-20px)
+			// transform: perspective(500px) translate3d(40%,5%,-1)
+			opacity: 0
+			
+		.block3
+			opacity: 0
+			transform: translateX(60px) translateY(-30px)
+.ill-4
+	.illustration-cont-inner
+		+rem(max-width,205px)
+		margin-left: 17%
+		margin-bottom: -7%
+		+r(1024)
+			margin-left: 10%
+			margin-bottom: -5%
+	&:not(.active)
+		.block1
+			opacity: 0
+			transform: scale(1.1) translateX(-20px) translateY(-30px)
+		.block2
+			transform: scale(.98) translateX(-20px) translateY(-30px)
+			// transform: perspective(500px) translate3d(40%,5%,-1)
+			opacity: 0
+			// transition-delay: .3s
+			
+		.block3
+			opacity: 0
+			// transition-delay: .5s
+			transform: scale(.98) translateX(-20px) translateY(-30px)
+	&.active
+		.block2
+			transition-delay: .4s
+		.block3
+			transition-delay: .65s
+.ill-5
+	.illustration-cont-inner
+		+rem(max-width,280px)
+		margin-right: 17%
+		margin-bottom: -5%
+		+r(1024)
+			margin-right: 3%
+			margin-bottom: 5%
+		.block
+			transform-origin: 50%
+	&:not(.active)
+		.block1
+			opacity: 0
+			transform: translateX(20px) translateY(-20px);
+		.block2
+			opacity: 0
+			transform: translateY(-60px) translateX(130px) scale(.3)
+	.block.hide
+		opacity: 0
+		display: none;
+		+r(600)
+			display: inherit
+	&.active
+		.block1
+			opacity: 1
+			transform: none
+			transition-delay: .4s
+		.block2
+			transition: transform .4s cubic-bezier(0.12, 0.4, 0.58, 1), opacity .4s
+			transition-delay: 1.35s
+		.blk-line
+			// opacity: 0
+			transition-delay: 1.3s
+			transform: scale(2.2) translateX(-60px) translateY(20px)
+		.blk
+			&1-1
+				transform: translateX(54px) translateY(85px)
+				transition-delay: .8s
+			&1-2
+				transform: translateY(55px)
+				transition-delay: .8s
+			&1-3
+				transform: translateX(-54px) translateY(22px)
+				transition-delay: .8s
+			&2-1
+				transform: translateX(53px) translateY(32px)
+				transition-delay: .8s
+			&2-3
+				transform: translateX(-53px) translateY(-32px)
+				transition-delay: .8s
+			&3-1
+				transform: translateX(53px) translateY(-22px)
+				transition-delay: .8s
+			&3-2
+				transform: translateY(-55px)
+				transition-delay: .8s
+			&3-3
+				transform: translateX(-54px) translateY(-85px)
+				transition-delay: .8s
+.ill-5-1
+	.illustration-cont-inner
+		+rem(max-width,280px)
+		margin-right: 17%
+		margin-bottom: -5%
+		.block
+			transform-origin: 50%
+	.block
+		&.block2
+			+rm(601)
+				display: none
+		&.line1
+			+r(600)
+				display: none
+
+
+	&:not(.active)
+		.block
+			&.block1
+				// opacity: 0
+				transform: translateX(20px) translateY(-15px)
+			&.block2
+				// opacity: 0
+				transform: translateX(120px) translateY(-55px) scale(.4)
+		// .stf1
+		// 	opacity: 0
+		.blockg
+			opacity: 0
+		.blk
+			&2-2
+				transform-origin: 191px 143px;
+			&1-1
+				transform: translateX(54px) translateY(85px)
+			&1-2
+				transform: translateY(55px)
+			&1-3
+				transform: translateX(-54px) translateY(22px)
+			&2-1
+				transform: translateX(53px) translateY(32px)
+			&2-3
+				transform: translateX(-53px) translateY(-32px)
+			&3-1
+				transform: translateX(53px) translateY(-22px)
+			&3-2
+				transform: translateY(-55px)
+			&3-3
+				transform: translateX(-54px) translateY(-85px)
+
+	&.active
+		.blockg
+			transition-delay: .5s
+		.stf1
+			transition-delay: .9s
+		.blk2-2
+			transform-origin: 191px 144px;
+			transform: scale(3.5)
+			transition-delay: 2.2s
+		.line1
+			transform: translateX(-80px) translateY(35px) 
+			transition-delay: 1.6s
+
+.ill-6
+	.illustration-cont-inner
+		+rem(max-width,182px)
+		margin-left: 17.1%
+		margin-bottom: -6.8%
+		+r(1024)
+			margin-left: 13%
+			margin-bottom: -2%
+	&.active
+		.block3
+			transition-delay: .1s
+		.block2
+			transition-delay: .65s
+		.block1
+			transition-delay: .95s
+	&:not(.active)
+
+		.block3
+			opacity: 0
+		.block2
+			opacity: 0
+			transform: translateY(-50px)
+		.block1
+			opacity: 0
+			transform: translateY(-100px)
+.ill-7
+	.illustration-cont-inner
+		+rem(max-width,250px)
+		margin-right: 12.5%
+		margin-bottom: -7%
+		+r(1024)
+			margin-right: 8.5%
+			margin-bottom: 2%
+	+tr(opacity .32s)
+	opacity: 0	
+	&.active
+		opacity: 1
+		transition-delay: .2s
+		.block3
+			animation: Ill7-1 1.8s .0s forwards
+		.block4
+			animation: Ill7-2 1.9s .0s forwards
+		.block2-2
+			transition-delay: 1.7s
+			opacity: 1	
+		.block2
+			transition-delay: 1.2s
+			transform: translateY(0%)
+
+	&:not(.active)
+		transition-delay: 0s
+		transition-duration: .09s
+		.block
+			overflow: visible	
+		.block3
+			transform: translateY(90px) translateX(-10px) scale(.98)
+			transition-delay: .45s !important
+		.block2
+			transform: translateY(-100px)
+			transition-delay: .45s !important
+		.block2-2
+			opacity: 0
+			transition-delay: .45s !important
+
+@keyframes Ill7-1
+	0%
+		transform: translateY(90px) translateX(10px) scale(.98)
+	25%
+		transform: translateY(90px) translateX(10px) scale(.98)
+	60%
+		transform: translateY(90px) translateX(0px) scale(1)
+	75%
+		transform: translateY(0px) translateX(0px) scale(1)
+	100%
+		transform: translateY(0px) translateX(0px) scale(1)
+@keyframes Ill7-2
+	0%	
+		opacity: 0
+	25%
+		opacity: 0
+	60%
+		opacity: 1
+	85%
+		opacity: 1
+	100%
+		opacity: 0
+.ill-8
+	.illustration-cont-inner
+		+rem(max-width,200px)
+		margin-left: 18%
+		margin-bottom: -6.5%
+		+r(1024)
+			margin-left: 13.5%
+			margin-bottom: 8%
+	&.active
+		.block3
+			transition-delay: .2s
+		.block2
+			transition-delay: .4s
+		.block1
+			transition-delay: .6s	
+	&:not(.active)
+		.block1
+			opacity: 0
+			transform: translateX(-75px) translateY(42.5px)
+		.block3
+			opacity: 0
+			transform: translateX(-75px) translateY(42.5px)
+		.block2
+			opacity: 0
+			transform: translateX(75px) translateY(-42.5px)
+.ill-9
+	.illustration-cont-inner
+		+rem(max-width,240px)
+		margin-right: 12.5%
+		margin-bottom: -6.3%
+		+r(1024)
+			margin-right: 5.5%
+			margin-bottom: -5.3%
+	&.active
+		.block0
+			transition-delay: .1s
+		.block1
+			transition-delay: .4s
+		.block2
+			transition-delay: .6s
+		.block3
+			transition-delay: .8s
+	&:not(.active)
+		.block0
+			opacity: 0
+			transform: translateX(30px)
+		.block1
+			opacity: 0
+			transform: translateX(10px) translateY(90px)
+		.block2
+			opacity: 0
+			transform: translateX(10px) translateY(90px)
+		.block3
+			opacity: 0
+			transform: translateX(10px) translateY(90px)
+.ill-9-1
+	.illustration-cont-inner
+		+rem(max-width,425px)
+		margin-right: 12.5%
+		margin-bottom: -6.3%
+		+r(1024)
+			margin-right: 5.5%
+			margin-bottom: -5.3%
+	&.active
+		.block0
+			transition-delay: .1s
+		.block1
+			transition-delay: .4s
+		.block2
+			transition-delay: .6s
+		.block3
+			transition-delay: .8s
+		.text0
+			transition-delay: .75s
+		.text1
+			transition-delay: 1s
+		.text2
+			transition-delay: 1.2s
+		.text3
+			transition-delay: 1.4s
+		.text4
+			transition-delay: 1.6s 
+
+		// .text0,.text1,.text2,.text3,.text4
+		// 	text
+		// 		transform: none
+	&:not(.active)
+		.block0
+			opacity: 0
+			transform: translateX(30px)
+		.block1
+			opacity: 0
+			transform: translateX(-75px) translateY(-42.5px)
+		.block2
+			opacity: 0
+			transform: translateX(75px) translateY(42.5px)
+		.block3
+			opacity: 0
+			transform: translateX(-75px) translateY(-42.5px)
+		.text0,.text1,.text2,.text3,.text4
+			opacity: 0
+		// .text0
+		// 	transform: translateX(-20px) translateY(0px)
+.ill-10
+	.illustration-cont-inner
+		+rem(max-width,205px)
+		margin-left: 17%
+		margin-bottom: -7%
+		+r(1024)
+			margin-left: 10%
+			margin-bottom: -5%
+	&:not(.active)
+		.block1
+			opacity: 0
+			transform: translateX(-30px) translateY(-10px) 
+		.block2
+			transform: scale(.98) translateX(-20px) translateY(-10px)
+			opacity: 0
+	&.active
+		.block2
+			transition-delay: .5s
+.ill-11
+	.illustration-cont-inner
+		+rem(max-width,280px)
+		margin-right: 17%
+		margin-bottom: -5%
+		+r(1024)
+			margin-right: 3%
+			margin-bottom: 5%
+	&.active
+		.block3
+			animation: Ill11-1 3s 0s forwards
+		.block1
+			transition-delay: .3s
+	+tr(opacity .32s)
+	&:not(.active)
+		opacity: 0
+		.block2
+			opacity: 0
+			transform: translateX(-70px) translateY(-35px)
+		
+@keyframes Ill11-1
+	0%
+		opacity: 0
+		transform: translateX(-70px) translateY(-40px)
+	20%
+		opacity: 0
+		transform: translateX(-70px) translateY(-40px)
+	40%
+		opacity: 1
+		transform: translateX(0px) translateY(0px)
+	80%
+		opacity: 1
+		transform: translateY(0px) translateX(0px)
+	100%
+		opacity: 0
+		transform: translateX(-70px) translateY(-40px)
+
+.ill-12
+	.illustration-cont-inner
+		+rem(max-width,182px)
+		margin-left: 17.1%
+		margin-bottom: -6.8%
+		+r(1024)
+			margin-left: 13%
+			margin-bottom: -2%
+	+tr(opacity .32s)
+	opacity: 0
+	&.active
+		opacity: 1
+		transition-delay: .3s
+		.block2
+			animation: Ill12-1 2s 0s forwards
+		.block3
+			animation: Ill12-1 1.8s .2s forwards
+		.block4
+			animation: Ill12-1 1.7s .3s forwards
+		.block1
+			transition-delay: .5s
+	&:not(.active)
+		.block1
+			opacity: 0
+			transform: translateX(-40px)
+.ill-14
+	.illustration-cont-inner
+		.parent
+			overflow: hidden
+	&.active
+		// .block3
+		.block1
+			transition-delay: .3s
+		.block1-1
+			transition-delay: .7s
+		.block1-2
+			transition-delay: .85s
+		.block1-3
+			transition-delay: 1.2s
+		.block1-4
+			transition-delay: 1.5s
+		.block2
+			transition-delay: 2s
+	&:not(.active)
+		.block2
+			opacity: 0
+			transform: translateX(0px) translateY(-45px)
+		.block1
+			opacity: 0
+			transform: translateX(-40px) translateY(-25px)
+		.block1-1
+			opacity: 0
+			transform: translateX(-40px) translateY(-25px)
+		.block1-2
+			opacity: 0
+			transform: translateX(-40px) translateY(-25px)
+		.block1-3,.block1-4
+			transform: scale(0)
+@keyframes Ill12-1
+	0%
+		opacity: 0
+		transform: translateX(40px) translateY(-40px)
+	40%
+		opacity: 0
+		transform: translateX(40px) translateY(-40px)
+	60%
+		opacity: 1
+		transform: translateX(40px) translateY(0px)
+	75%
+		opacity: 1
+		transform: translateX(40px) translateY(0px)
+	100%
+		opacity: 1
+		transform: translateX(0px) translateY(0px)
+
+.ill-use1
+	.ill-desc-1
+		right: 98%
+		+rem(top,-10px)
+		.text
+			white-space: nowrap
+		.radius
+			&-outer
+				float: right
+				+rem(margin-right,-25px)
+			&-inner
+				float: right
+		&:hover,&:active
+			&~ svg 
+				.block2,.block4,.block1
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+	.ill-desc-2
+		left: 70%
+		+rem(top,-10px)
+		text-align: left
+		white-space: nowrap
+		// +rem(width,130px)
+		.text
+			float: right
+			+rem(padding-left,80px)
+		&:hover,&:active
+			&~ svg 
+				.block3,.block4,.block2
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+	.ill-desc-3
+		right: 75%
+		+rem(bottom,-60px)
+		white-space: nowrap
+		+rem(width,160px)
+		.text
+			text-align: left
+			white-space: normal
+			+rem(padding-right,5px)
+			width: 100%
+			float: left
+			+rem(padding-top,20px)
+		.radius
+			.radius-inner
+				position: absolute
+				right: 0
+				bottom: 0
+		&:hover,&:active
+			&~ svg 
+				.block3,.block1,.block2
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+	.ill-desc-4
+		left: 90%
+		+rem(bottom,-15px)
+		+rem(width,200px)
+		.radius-inner
+			position: absolute
+			// left: 0
+			// bottom: 0
+			right: 0
+			top: 0
+		.text
+			// +rem(padding-top,45px)
+			text-align: left
+			white-space: normal
+		&:hover
+			&~ svg 
+				.block3,.block1,.block4
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+.ill-use2
+	.ill-desc-1
+		right: 98%
+		+rem(top,-10px)
+		.text
+			white-space: nowrap
+		.radius
+			&-outer
+				float: right
+				+rem(margin-right,-25px)
+			&-inner
+				float: right
+		&:hover
+			&~ svg 
+				.block3,.block2,.block1
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+	.ill-desc-2
+		left: 70%
+		+rem(top,-10px)
+		text-align: left
+		white-space: nowrap
+		+rem(width,220px)
+		.text
+			white-space: normal
+			float: right
+			+rem(padding-left,80px)
+		.radius-outer
+				+rem(margin-top,20px)
+		&:hover
+			&~ svg 
+				.block4,.block2,.block3
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block4
+					g 
+						&:nth-child(1)
+							.block.frr
+								fill-opacity: 0
+						&:nth-child(2)
+							.block.bckl
+								fill-opacity: 0
+						&:nth-child(5)
+							.block.frl
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0.5
+							.block.bckr
+								fill-opacity: 0.1
+							.block.bckl
+								fill-opacity: 0.05;
+							.block.frt
+								fill-opacity: 0.4
+						&:nth-child(6)
+							.block.bckr
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0.5
+							.block.frt
+								fill-opacity: 0.4
+						&:nth-child(7)
+							.block.frl
+								fill-opacity: 1
+							.block.bckl
+								fill-opacity: 0.1
+							.block.frt
+								fill-opacity: 0
+
+				.block1
+					g
+						&:nth-child(2)
+							opacity: .9
+							.block.bckl
+								fill-opacity: 0
+							.block.frl
+								fill-opacity: 0.9
+						&:nth-child(1)
+							.block.bckl,.block.bckr
+								fill-opacity: 0
+
+	.ill-desc-3
+		right: 98%
+		+rem(bottom,-30px)
+		white-space: nowrap
+		+rem(width,180px)
+		.text
+			text-align: left
+			white-space: normal
+			+rem(padding-right,5px)
+			width: 100%
+			float: left
+			+rem(padding-top,20px)
+		.radius
+			.radius-inner
+				position: absolute
+				right: 0
+				bottom: 0
+		&:hover
+			&~ svg 
+				.block4,.block2,.block1
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block4
+					g 
+						&:nth-child(1)
+							.block.frr
+								fill-opacity: 0
+						&:nth-child(2)
+							.block.bckl
+								fill-opacity: 0
+							.block.bckr
+								fill-opacity: .5
+						&:nth-child(5)
+							.block.frl
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0.5
+							.block.bckr
+								fill-opacity: 0.1
+							.block.bckl
+								fill-opacity: 0.05;
+							.block.frt
+								fill-opacity: 0.4
+						&:nth-child(6)
+							.block.bckr
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0.5
+							.block.frt
+								fill-opacity: 0.4
+							.block.bckl
+								fill-opacity: 0.19
+						&:nth-child(7)
+							.block.frt,.block.bckl
+								fill-opacity: 0
+							.block.frl,.block.bckr
+								fill-opacity: 0.19
+
+	.ill-desc-4
+		left: 74%
+		+rem(bottom,-20px)
+		white-space: nowrap
+		+rem(width,180px)
+		.radius-inner
+			position: absolute
+			left: 0
+			bottom: 0
+		.text
+			+rem(padding-top,45px)
+			white-space: normal
+			+rem(max-width,150px)
+			text-align: left
+		&:hover
+			&~ svg 
+				.block4,.block3,.block1
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block4
+					g 
+						&:nth-child(1)
+							.block.frr
+								fill-opacity: 0
+						&:nth-child(2)
+							.block.bckl
+								fill-opacity: 0
+							.block.bckr
+								fill-opacity: .5
+						&:nth-child(5)
+							.block.frl
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0.5
+							.block.bckr
+								fill-opacity: 0.1
+							.block.bckl
+								fill-opacity: 0.05;
+							.block.frt
+								fill-opacity: 0.4
+						&:nth-child(6)
+							.block.bckr
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0.5
+							.block.frt
+								fill-opacity: 0.4
+							.block.bckl
+								fill-opacity: 0.19
+						&:nth-child(7)
+							.block.frt,.block.bckl
+								fill-opacity: 0
+							.block.frl,.block.bckr
+								fill-opacity: 0.19
+.ill-use3
+	.ill-desc-1
+		right: 98%
+		+rem(top,-10px)
+		.text
+			white-space: nowrap
+		.radius
+			&-outer
+				float: right
+				+rem(margin-right,-25px)
+			&-inner
+				float: right
+		&:hover
+			&~ svg 
+				.block2,.block4,.block1
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block2
+					g 
+						&:nth-child(3)
+							.block.frl
+								fill-opacity: 0
+						&:nth-child(4)
+							.block.bckr
+								fill-opacity: 0
+							.block.frt
+								fill-opacity: 0.3;
+
+	.ill-desc-2
+		left: 70%
+		+rem(top,-10px)
+		text-align: left
+		white-space: nowrap
+		// +rem(width,130px)
+		.text
+			white-space: normal
+			float: right
+			+rem(padding-left,80px)
+		&:hover
+			&~ svg 
+				.block2,.block3,.block4
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block2
+					g 
+						&:nth-child(3)
+							.block.frl
+								fill-opacity: 0
+						&:nth-child(4)
+							.block.bckr
+								fill-opacity: 0
+							.block.frt
+								fill-opacity: 0.3;
+	.ill-desc-3
+		right: 83%
+		+rem(bottom,-50px)
+		white-space: nowrap
+		+rem(width,130px)
+		.text
+			text-align: left
+			white-space: normal
+			+rem(padding-right,5px)
+			width: 100%
+			float: left
+			+rem(padding-top,20px)
+		.radius
+			.radius-inner
+				position: absolute
+				right: 0
+				bottom: 0
+		&:hover
+			&~ svg 
+				.block2,.block1,.block3
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block2
+					g 
+						&:nth-child(3)
+							.block.frl
+								fill-opacity: 0
+						&:nth-child(4)
+							.block.bckr
+								fill-opacity: 0
+							.block.frt
+								fill-opacity: 0.3;
+	.ill-desc-4
+		left: 80%
+		+rem(bottom,-5px)
+		white-space: nowrap
+		+rem(width,180px)
+		.radius-inner
+			position: absolute
+			left: 0
+			bottom: 0
+		.text
+			+rem(padding-top,45px)
+			white-space: normal
+			+rem(max-width,70px)
+		&:hover
+			&~ svg 
+				.block1,.block3,.block4
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+.ill-use4
+	.ill-desc
+		&:hover
+			&~svg
+				.hide
+					opacity: 0
+					fill-opacity: 0
+	.ill-desc-1
+		right: 98%
+		+rem(top,-10px)
+		.text
+			white-space: nowrap
+		.radius
+			&-outer
+				float: right
+				+rem(margin-right,-25px)
+			&-inner
+				float: right
+		&:hover
+			&~ svg 
+				.block1,.block4
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block2
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+					g > g
+						&:nth-child(3)
+							.block.frl
+								fill-opacity: 0
+						&:nth-child(4)
+							.block.bckr
+								fill-opacity: 0
+
+	.ill-desc-2
+		left: 70%
+		+rem(top,-10px)
+		text-align: left
+		white-space: nowrap
+		// +rem(width,130px)
+		.text
+			white-space: normal
+			float: right
+			+rem(padding-left,80px)
+		&:hover
+			&~ svg 
+				.block3,.block1,.block4
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block3
+					g > g
+						&:nth-child(3)
+							.block.frr
+								fill-opacity: 0
+							.block.bckr
+								fill-opacity: 0.19
+						&:nth-child(4)
+							.block.bckl,.block.bck
+								fill-opacity: 0
+							.block.bckr
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0
+
+						&:nth-child(5)
+							// .block.bckl
+							// 	fill-opacity: 0
+							.block.frr
+								fill-opacity: 0.1
+							.block.frl
+								fill-opacity: 0.1
+
+				.block1
+					g > g
+						&:nth-child(2)
+							.block.frl
+								fill-opacity: 0.19
+
+	.ill-desc-3
+		right: 80%
+		+rem(bottom,-30px)
+		white-space: nowrap
+		+rem(width,180px)
+		.text
+			text-align: right
+			white-space: normal
+			+rem(padding-right,5px)
+			width: 100%
+			float: left
+			+rem(padding-top,20px)
+		.radius
+			.radius-inner
+				position: absolute
+				right: 0
+				bottom: 0
+		&:hover
+			&~ svg 
+				.block2,.block1,.block3
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block3
+					g > g
+						&:nth-child(3)
+							.block.frr
+								fill-opacity: 0
+							.block.bckr
+								fill-opacity: 0.19
+						&:nth-child(4)
+							.block.bckl,.block.bck
+								fill-opacity: 0
+							.block.bckr
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0
+						&:nth-child(5)
+							// .block.bckl
+							// 	fill-opacity: 0
+							// .block.frr
+							// 	fill-opacity: 0
+							.block.bckr
+								fill-opacity: 0.19
+				.block1
+					g > g
+						&:nth-child(2)
+							.block.frl
+								fill-opacity: 0.19
+				.block2
+					g > g
+						&:nth-child(3)
+							.block.frl
+								fill-opacity: 0
+						&:nth-child(4)
+							.block.bckr,.block.bckl
+								fill-opacity: 0
+
+	.ill-desc-4
+		left: 80%
+		+rem(bottom,-5px)
+		white-space: nowrap
+		+rem(width,180px)
+		.radius-inner
+			position: absolute
+			left: 0
+			bottom: 0
+		.text
+			+rem(padding-top,45px)
+			white-space: normal
+			+rem(max-width,70px)
+		&:hover
+			&~ svg 
+				.block2,.block3,.block4
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+				.block1
+					g > g
+						&:nth-child(2)
+							// opacity: .9
+							.block.frl
+									fill-opacity: 0.9
+							.block.bckl
+								fill-opacity: 0
+						&:nth-child(1)
+							.block.bckl
+								fill-opacity: 0
+				.block3
+					g > g
+						&:nth-child(3)
+							.block.frr
+								fill-opacity: 0
+							.block.bckr
+								fill-opacity: 0.19
+						&:nth-child(4)
+							.block.bckl,.block.bck
+								fill-opacity: 0
+							.block.bckr
+								fill-opacity: 0
+							.block.frr
+								fill-opacity: 0
+
+						&:nth-child(5)
+							// .block.bckl
+							// 	fill-opacity: 0
+							.block.frr
+								fill-opacity: 1
+							.block.frl
+								fill-opacity: 0.1
+				.block2
+					g > g
+						&:nth-child(3)
+							.block.frl
+								fill-opacity: 0
+						&:nth-child(4)
+							.block.bckr,.block.bckl
+								fill-opacity: 0
+.ill-use5
+	.illustration-cont-inner
+		margin-right: 0
+		text-align: center
+	.ill-desc
+		+r(740)
+			margin-top: 0
+			padding-left: 0
+			+rem(margin-bottom,15px)
+			.text
+				margin-top: 0
+				padding-left: 0
+				text-align: center
+				
+			.radius-outer
+				display: none
+				
+		&:hover
+			&~svg
+				.hide
+					opacity: 0
+	+r(840)
+		.text 
+			+rem(font-size,15px)
+			// +rem(padding-top,0px)
+			padding-top: 0 !important
+		.radius
+			+rem(width,40px)
+			+rem(height,20px)
+			&-outer
+
+	.ill-desc-1
+		right: 105%
+		+rem(top,130px)
+		white-space: nowrap
+		+r(840)
+			right: 100%
+			
+		.radius
+			&-outer
+				display: inline-block
+				+rem(padding-top,13px)
+				// float: right
+				// +rem(margin-right,-25px)
+			&-inner
+				float: right
+				+rem(margin-right,-25px)
+		&:hover
+			&~ svg 
+				.block1
+					transform: translateY(-30px)
+				.block2
+					transform: translateY(-15px)
+				.block4,.block1,.block3
+
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+						&.comb 
+							fill-opacity: 0.3
+	.ill-desc-2
+		left: 105%
+		+rem(top,85px)
+		text-align: left
+		white-space: nowrap
+		+r(840)
+			left: 100%
+		.radius
+			&-outer
+				display: inline-block
+			&-inner
+				+rem(margin-left,-45px)
+		.text
+			float: right
+			+rem(padding-left,80px)
+			+rem(padding-top,13px)
+			+r(840)
+				+rem(margin-top,10px)
+				+rem(padding-left,60px)
+		&:hover
+			&~ svg 
+				.block1
+					transform: translateY(-15px)
+				.block4,.block2,.block3
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+						&.comb 
+							fill-opacity: 0.3
+	.ill-desc-3
+		right: 105%
+		+rem(bottom,100px)
+		white-space: nowrap
+		+r(840)
+			right: 100%
+		.radius
+			&-outer
+				display: inline-block
+				+rem(padding-top,13px)
+			&-inner
+				float: right
+				+rem(margin-right,-25px)
+		&:hover
+			&~ svg 
+				.block3,.block2,.block1
+					transform: translateY(-30px)
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+						&.comb 
+							fill-opacity: 0.3
+	.ill-desc-4
+		left: 105%
+		+rem(bottom,150px)
+		text-align: left
+		white-space: nowrap
+		+r(840)
+			left: 100%
+		.radius
+			&-outer
+				display: inline-block
+			&-inner
+				+rem(margin-left,-45px)
+		.text
+			float: right
+			+rem(padding-left,80px)
+			+rem(padding-top,13px)
+			+r(840)
+				+rem(margin-top,10px)
+				+rem(padding-left,60px)
+
+		&:hover
+			&~ svg 
+				.block1,.block2
+					transform: translateY(-30px)
+				.block3
+					transform: translateY(-15px)
+				.block4,.block2,.block1
+					.block
+						&.bck 
+							fill-opacity: 0.19
+						&.bckr 
+							fill-opacity: .3
+						&.bckl 
+							fill-opacity: .3
+						&.frt 
+							fill-opacity: .3
+						&.frr
+							fill-opacity: .3
+						&.frl
+							fill-opacity: .3
+						&.comb 
+							fill-opacity: 0.3
+.radius
+	+rem(width,50px)
+	+rem(height,23px)
+	overflow: hidden
+	position: relative
+	+clr
+	&-outer
+		+rem(margin,15px 12px 10px 10px)
+	&-inner
+		border: 1px solid rgba(255, 255, 255, 0.7)
+		+rem(width,120px)
+		+rem(height,120px)
+		border-radius: 50%
+		+tr(border-color .2s)
+
+		
+
+.illustration-cont-text
+	display: inline-block
+	position: relative
+	.ill-desc
+		position: absolute
+		cursor: pointer
+		+clr
+		+r(740)
+			position: static
+			display: inline-block
+			vertical-align: top
+			width: 50%
+			.text
+				width: 100%
+				min-width: 100%
+		+r(440)
+			display: block
+			width: 100%
+		.text,.radius-outer
+			display: inline-block
+			vertical-align: middle
+			
+
+	
+.row-illustration
+	+rem(margin-top,-37px)
+	+clr
+	+rem(margin-bottom,-40px)
+	+r(600)
+		margin-top: 0 !important
+		margin-bottom: 0 !important
+		padding-bottom: 0 !important
+		
+	.ill-content
+		display: inline-block
+		vertical-align: middle
+		text-align: left
+	.illustration-cont-inner
+		margin: 0
+		// margin-top: -2%
+		margin-right: 20.5%
+		+r(1024)
+			margin-right: 0
+	.illustration-cont
+		text-align: right
+		+r(600)
+			text-align: center !important
+	&:not(.ill-left)
+		.col-50
+			&:nth-child(1)
+				float: right
+				+r(600)
+					float: none
+			&:nth-child(2)
+				+rem(height,369px)
+				+vertical
+				+r(830)
+					height: auto
+					
+	.col-50
+		vertical-align: middle
+		&:nth-child(2)
+			.text
+				padding-right: 11%
+			+r(1024)
+				.text
+					margin-left: 0 !important
+
+		.title
+			padding-right: 15%
+	&.ill-left
+		+rem(margin-bottom,-10px)
+		+rem(margin-top,-25px)
+		.col-50
+			// float: left
+			.illustration-cont-inner
+				
+				margin: 0
+				margin-left: 20.5%	
+				+rem(margin-top,10px)
+				+r(1024)
+					margin-left: 0
+									
+			.illustration-cont
+				text-align: left
+			.text
+				padding-right: 5%
+
+		&.ill-left-2
+			+rem(margin-top,-50px)
+			+rem(margin-bottom,-35px)
+			.title
+				+rem(margin-top,11px)
+
+	&.ill-center
+		margin: 0
+		+rem(padding-top,5px)
+		.ill-content
+			text-align: center
+			
+		.title + .text
+			+rem(max-width,700px)
+			margin: 0 auto
+			+rem(padding-top,7px)
+		.illustration-cont
+			text-align: center
+			+rem(margin-top,88px)
+			+rem(margin-bottom,22px)
+			+rem(padding-left,13px)
+			+r(600)
+				margin: 0
+				padding: 0
+				+rem(margin-top,28px)
+		.illustration-cont-inner
+			margin: 0
+	&.ill-special
+		+rem(margin-bottom,-50px)
+		.col-50
+			.title
+				line-height: 1.44;
+				// +rem(margin-top,-15px)
+			.illustration-cont-inner
+				margin: 0
+				margin-right: 20.5%	
+				width: auto
+				+rem(margin-top,-10px)
+				+r(600)
+					margin: 0
+.blue 
+	.ill-center
+		padding-top: 0
+		.title +.text
+			padding-top: 0
+		.illustration-cont
+			padding-left: 0
+			+rem(margin-top,63px)
+			margin-bottom: 0
+
+.role
+	&-wrapper
+		+rem(margin-top,58px)
+		+rem(max-width,1060px)
+		margin-left: auto
+		margin-right: auto
+		+rem(margin-bottom,-38px)
+		+r(600)
+			+rem(margin-top,35px)
+			+rem(margin-bottom,-15px)
+		.row 
+			@supports (display: flex)
+				display: flex
+				flex-flow: row wrap
+				align-items: stretch
+				.role-item
+					display: flex
+					// height: 100%
+				.col-50
+					display: flex
+			.col-50
+				+rem(margin-bottom,38px)
+				+r(600)
+					+rem(margin-bottom,15px)
+	&-item
+		width: 100%
+		background-color: $white
+		+rem(padding,28px)
+		box-shadow: 0 4px 14px 0 rgba(45, 45, 45, 0.2);
+		+r(600)
+			+rem(padding,20px)
+		&-inner
+			font-size: 0
+		&-img,&-text
+			display: inline-block
+			vertical-align: top
+		&-img
+			+rem(width,60px)
+			+rem(margin-top,11px)
+			// +rem(padding-left,1px)
+			svg
+				+rem(max-height,56px)
+				+rem(max-width,51px)
+		&-text
+			width: calc(100% - 3.75rem)
+			+rem(padding-left,15px)
+			+rem(margin-top,1px)
+			+rem(padding-bottom,6px)
+			.text.bold
+				padding-top: 0 !important
+				&+ .text
+					&:not(.bold)
+						+rem(margin-top,15px)
+						+r(600)
+							padding-right: 0 !important
+.rowtext-2
+	.col-50
+		.text
+			+rm(601)
+				+rem(padding-right,15px)
+		&:nth-child(2)
+			.text
+				+rm(601)
+					+rem(padding-right,20px)
+.browser-support
+	
+	&> .text
+		display: block
+		+rem(max-width,520px)
+		margin: 0 auto
+		// +rem(padding-bottom,0px)
+	&-wrap
+		font-size: 0
+		text-align: center
+		+rem(padding-top,20px)
+		+rem(margin-bottom,-10px)
+		+r(800)
+			+rem(margin-left,-40px)
+			+rem(margin-right,-40px)
+		+r(600)
+			+rem(margin-left,-20px)
+			+rem(margin-right,-20px)	
+		@supports (display: flex)
+			display: flex
+			flex-flow: row wrap
+			align-items: flex-end
+			justify-content: space-around
+			+rem(max-width, 950px)
+			margin: 0 auto
+			+rem(margin-bottom,-10px)
+			.browser-support-item
+				+rem(min-width,100px)
+				flex-grow: 0
+				flex-shrink: 0
+					
+	&-item
+		display: inline-block
+		vertical-align: bottom
+		+rem(min-width,160px)
+		+padlr(10px)
+		+rem(margin-top,40px)
+		+r(600)
+			min-width: 33.33% !important
+	&-text
+		text-align: center
+		.text
+			
+			+rem(margin-top,15px)
+
+		
+.demo
+	// display: flex
+	// align-self: stretch
+	
+	align-items: stretch
+	// width: 100%
+	// display: table
+	display: flex
+	&-btn
+		+rem(margin-top,33px)
+		+notouch
+			transition: transform .3s, opacity .3s
+			transform: translateY(30px)
+			opacity: 0
+	&-inner
+		// height: 100%
+		font-size: 0
+		width: 100%
+		// align-items: stretch
+		// width: 100%
+		// display: table-row-group
+		// height: 100%
+		// height: 100%
+		// height: 100%
+		display: flex
+		align-items: stretch
+
+	&-text
+		+rem(max-width,300px)
+		display: block
+		margin: 0 auto
+		text-align: left
+		+tr(transform .3s)
+	&-item
+		// display: inline-block
+		// vertical-align: top
+		// display: table-cell
+		// height: 100%
+		display: flex
+		flex-direction: column
+		width: 50%
+		+padlr(15px)
+		// +vertical
+		+tr(background-color .3s)
+		overflow: hidden
+		+r(768)
+			width: 100%
+			height: 50%
+		&-inner
+			// display: inline-block
+			width: 100%
+			// vertical-align: middle
+			margin: auto
+			+rem(padding-top,25px)
+			+rem(padding-bottom,25px)
+			text-align: center
+			
+			+r(1024)
+				+rem(padding-top,55px)
+				+rem(padding-bottom,40px)
+			.illustration-cont-inner
+				+tr(transform .3s)
+				transform: scale(1.35)
+				
+				+r(1380)
+					transform: scale(1.35)
+				+rm(1461)
+					transform: scale(1.5)
+				+r(1024)
+					transform: none
+		.main-ill3
+			&:not(.active)
+				.block
+					&.block2
+						transform: translateY(-21px) translateX(-38px);
+					&.block3
+						transform: translateY(-21px) translateX(-76px);
+					&.block4
+						transform: translateY(88px)
+					&.block5
+						transform: translateY(-21px) translateX(38px);
+					&.block6
+						transform: translateY(-21px) translateX(76px);	
+					&.block7
+						transform: translateY(22px) translateX(38px);
+					&.block9
+						transform: translateY(22px) translateX(-38px);
+			&.active
+				.block
+					&.block2,&.block5
+						transition-delay: .4s
+					&.block3,&.block6,&.block4
+						transition-delay: .4s
+
+		&:not(:hover)
+			.demo-text
+				transform: translateY(-20px)
+				+rm(1461)
+					transform: translateY(-40px)
+				+r(1024)
+					transform: none
+				
+		.main-ill4
+			&:not(.active)
+				.block
+					&.block1
+						transform: translateY(-21px) translateX(38px);
+					&.block2
+						transform: translateY(-21px) translateX(-38px);
+					&.block3
+						transform: translateY(88px)
+					&.block5
+						transform: translateY(22px) translateX(38px);
+					&.block4
+						transform: translateY(22px) translateX(-38px);
+			&.active
+				.block
+					&.block1,&.block2,&.block3
+						transition-delay: .4s 
+					// &.block3,&.block6,&.block4
+					// 	transition-delay: .4s
+		&:active
+			background-color: $bhover
+			transition: none
+		&:hover
+			+notouch
+				background-color: $bhover
+			.illustration-cont-inner
+				+rm(801)
+					transform: scale(1)
+			.demo-btn
+				transform: none
+				opacity: 1
+				transition-delay: .3s
+			.main-ill3.active
+				+notouch
+					.block
+						&.block7,&.block9
+							opacity: .3
+						&.block8
+							.block
+								&.bck 
+									opacity: 0.22
+								&.bckr 
+									opacity: .3
+								&.bckl 
+									opacity: .3
+								&.frt 
+									opacity: .3
+								&.frr
+									opacity: .3
+								&.frl
+									opacity: .3
+			.main-ill4.active
+				+notouch
+					.block
+						&.block3-1
+							opacity: .3
+						&.block1,&.block2
+							.block
+								&.comb
+									opacity: .19
+								&.bckr,&.bckl,&.frl,&.frr,&.comb2
+									opacity: .3
+
+.table
+	display: table
+	width: 100%
+	&-head
+		display: table-header-group
+		.table-item
+			border-top: $bb
+			border-bottom: $bb
+			// &:nth-child(2)
+			// 	.text
+			// 		white-space: nowrap
+
+	&-row
+		display: table-row
+		+tr(background-color .2s)
+		&:hover
+			background-color: #f4f4f4
+		.table-item
+			border-bottom: $bb
+	&-item
+		display: table-cell
+		width: 33.33%
+		text-align: left
+		vertical-align: middle
+		+padlr(28px)
+		+rem(padding-top,15px)
+		+rem(padding-bottom,15px)
+		&:first-child
+			width: 34%
+		+r(600)
+			.text
+				+rem(font-size,15px)
+			+padlr(20px)
+
+a.text
+	color: $or 
+	font-weight: 300
+	+tr(font-weight .2s)
+	&:hover
+		font-weight: 400
+.download
+	&-wrap
+		display: block
+		+rem(max-width,981px)
+		margin: 0 auto
+		+rem(margin-bottom,-20px)
+	&-text
+		+rem(padding-left,27px)
+		+r(600)
+			+rem(padding-left,20px)
+		.title
+			+rem(margin-bottom,30px)
+
+	&-item
+		&:not(:last-child)
+			+rem(margin-bottom,100px)
+			+r(600)
+				+rem(margin-bottom,60px)
+		+r(600)
+			+rem(margin-left,-30px)
+			+rem(margin-right,-30px)
+.wrapper.gray.page-head
+	&+ .wrapper
+		.side-title-text
+			+rm(1025)
+				padding-right: 4%
+				+rem(padding-bottom,5px)
+		.plan-item-descr
+			+rem(padding-bottom,25px)
+		&+ .wrapper
+			.row-illustration:not(.ill-left) .col-50:nth-child(2)
+				+rm(1025)
+					+rem(height,290px)
+					.text
+						padding-right: 8%
+						+rem(margin-top,-8px)
+				+r(1024)
+					height: auto
+					.title
+						+rem(margin-left,-10px)
+
+.plan
+	&-wrap
+		font-size: 0
+		// +rem(max-width: )
+		+rem(margin-top,74px)
+		+r(1240)
+			+rem(margin-left,-57px)
+			+rem(margin-right,-57px)
+		+r(900)
+			+rem(margin-left,-20px)
+			+rem(margin-right,-20px)
+		+r(1024)
+			+rem(margin-top,54px)
+	&-inner
+		text-align: center
+		
+		+rem(margin-right,-35px)
+	&-item
+		display: inline-block
+		vertical-align: top
+		width: 33.33%
+		+rem(padding-right,35px)
+		+rem(max-width,365px)
+		+r(900)
+			display: block
+			margin: 0 auto
+			width: 100%
+			&:not(:last-child)
+				+rem(margin-bottom,35px)
+		&.item-center
+			+rm(901)
+				+rem(margin-top,-20px)
+			.plan-item-inner
+				box-shadow: 0 4px 24px 0 rgba(45, 45, 45, 0.2);
+		&-inner
+			background-color: $white
+			border: $bb
+			border-radius: $br
+			text-align: center
+			+padlr(20px)
+		&-head
+			+rem(padding-top,19px)
+			+rem(padding-bottom,20px)
+		&-title
+			.text-up
+				color: $bl
+				+rem(letter-spacing,.3px)
+		&-image
+			+rem(margin-top,19px)
+			+rem(margin-bottom,20px)
+			+rem(height,47px)
+			+vertical
+			svg
+				vertical-align: bottom
+
+		&-price
+			+rem(margin, 0 -21px)
+			background-color: $bl
+			+rem(height,124px)
+			&:not(:empty)
+				+vertical
+			&:empty
+				height: 1px
+				margin: 0
+				background-color: rgba(151, 151, 151, 0.2)
+			&-inner
+				display: inline-block
+				vertical-align: middle
+				&:empty
+					&:before
+						content: ''
+						display: inline-block
+						height: 1px
+						+rem(width,30px)
+						background-color: $white
+			.title
+				color: $white
+				font-weight: 600
+				margin-bottom: 0 !important
+				+rem(padding-bottom,2px)
+				&:not(:only-child)
+					+rem(padding-top,8px)
+			.text
+				color: $white
+				+rem(margin-top,8px)
+		&-descr
+			+rem(padding-bottom,35px)
+			width: 100%
+			display: inline-block
+			
+	&-list 
+		+rem(margin-top,29.5px)
+		+rem(margin-bottom,30px)
+		// +rem(min-height,93px)
+		+rem(max-width,160px)
+		display: inline-block
+		
+		&-item
+			text-align: left
+			+rem(padding-left,17px)
+			line-height: 1.75 !important
+			position: relative
+			&:before
+				content: ''
+				display: inline-block
+				background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iI0YyNEQwMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxKSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjUiLz48cGF0aCBkPSJNMiA1bDEuNjY2NjY2NjcgMS42NjY2NjY2N0w3LjMzMzMzMzMzIDMiLz48L2c+PC9zdmc+);
+				+contain
+				+rem(width,12px)
+				+rem(height,12px)
+				position: absolute
+				+rem(left,-4px)
+				+rem(top,8px)
+		&.disabled
+			.plan-list-item
+				color: #e6e6e6 !important
+				&:before
+					background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSLQodC70L7QuV8xIiB2aWV3Qm94PSIwIDAgMTIgMTIiPjxzdHlsZT4uc3Qwe2ZpbGw6bm9uZTtzdHJva2U6I0U2RTZFNjtzdHJva2UtbGluZWpvaW46cm91bmQ7fSAuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6I0U2RTZFNjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7fTwvc3R5bGU+PGcgaWQ9IlB1cmNoYXNlXzFfIj48ZyBpZD0iUHVyY2hhc2UtQ29weS0yIj48ZyBpZD0iUHVyY2hhc2UiPjxnIGlkPSJmcmVlIj48ZyBpZD0iVGV4dCI+PGcgaWQ9IlNoYXBlLUNvcHktNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxKSI+PGNpcmNsZSBpZD0iT3ZhbCIgY3g9IjUiIGN5PSI1IiByPSI1IiBjbGFzcz0ic3QwIi8+PHBhdGggaWQ9IlNoYXBlIiBkPSJNMi4yIDcuOGw1LjctNS43IiBjbGFzcz0ic3QxIi8+PHBhdGggaWQ9IlNoYXBlLUNvcHktMiIgZD0iTTcuOCA3LjhMMi4yIDIuMiIgY2xhc3M9InN0MSIvPjwvZz48L2c+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==);
+
+	&-feature
+		width: 100%
+		&>.text
+			+rem(margin-bottom,10px)
+		+rem(padding-bottom,15px)
+		&-row
+			font-size: 0
+			// +rem(margin,0 -20px)
+			display: inline-block
+			+rem(max-width,250px)
+			width: 100%
+			.text
+				display: inline-block
+				vertical-align: top
+				width: 50%
+				text-align: left
+				line-height: 1.3
+				+rem(margin-bottom,14px)
+				+rem(margin-top,4px)
+				+rem(padding-right,5px)
+				+r(768)
+					+rem(font-size,15px)
+				&.bold
+					+rem(padding-right,0px)
+
+.message
+	&-wrap
+		height: 100%
+		+vertical
+	&-title
+		.title
+			margin-top: 0
+	&-inner
+		width: 100%
+		display: inline-block
+		vertical-align: middle
+		
+		+rem(max-width,681px)
+		+padlr(25px)
+		+rem(padding-top,50px)			
+		+rem(padding-bottom,60px)
+	&-text
+		+rem(margin-bottom,30px)
+		padding-top: 2.1vh
+.menu-open
+	+r(920)
+		.doc-menu
+			+rem(padding-top,74px)
+	+r(600)
+		.doc-menu
+			+rem(padding-top,65px)
+.doc
+	.page__header--wrap
+		&.is-hidden
+			&+.page__content
+				.doc-menu
+					+r(920)
+						+rem(padding-top,74px)
+					+r(600)
+						+rem(padding-top,65px)
+
+	&-bg 
+		content: ''
+		display: inline-block
+		position: fixed
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		background-color: rgba(0,105,223,.5);
+		z-index: -1
+		transition: opacity .25s,visibility .25s,background-color  0s;
+		opacity: 0;
+		visibility: hidden;
+	&-wrap
+		height: 100%
+	&-inner
+		display: flex
+		flex-flow: row nowrap
+		align-items: stretch
+		height: 100%
+		+rem(padding-left,371px)
+		position: relative
+		+r(1024)
+			+rem(padding-left,323px)	
+		+r(920)
+			padding-left: 0
+	&-menu
+		background-color: $bl
+		left: 0
+		top: 0
+		bottom: 0
+		+rem(width,371px)
+		+rem(padding-top,70px)
+		+rem(padding-bottom,70px)
+		+padlr(5px)
+		position: fixed
+		top: 0
+		bottom: 0
+		left: 0
+		z-index: 0
+		+tr(padding-top .3s)
+		z-index: 4
+		will-change: padding-top
+		+r(600)
+			+rem(padding-top,76px)
+		&-btn
+			display: inline-block
+			width: 100%
+			+padlr(25px)
+			+clr 
+			+rem(padding-top,15px)
+			+rem(padding-bottom,15px)
+			
+			+vertical
+			text-align: left
+
+			.text-up
+				display: inline-block
+				color: $white
+				font-weight: 600
+				+rem(line-height,40px)
+				vertical-align: middle
+				+rem(font-size,20px)
+				+r(600)
+					+rem(line-height,20px)
+			+rm(921)
+				display: none
+			+r(600)
+				+padlr(25px)
+				+rem(padding-top,20px)
+				+rem(padding-bottom,20px)
+				.text-up
+					+rem(margin-left,-5px)
+			+r(380)
+				+padlr(16px)
+			&.active
+				.doc-menu-btn-arr
+					transform: scale(1,-1)
+				&~ .doc-menu-inner 
+					max-height: 75vh
+					margin-top: 0
+					+r(600)
+						max-height: 68vh
+					+r(330)
+						max-height: 61vh
+				&~ .doc-bg
+					opacity: 1
+					visibility: visible
+			&-arr
+				+rem(max-width,35px)
+				float: right
+				+r(600)
+					+rem(max-width,30px)
+
+				svg
+					+rem(height,40px)
+					+r(600)
+						+rem(height,20px)
+				
+		+r(1024)
+			+rem(width,307px)
+		+r(920)
+			bottom: auto
+			width: 100%
+			+rem(padding-bottom,15px)
+			+rem(padding-top,90px)
+
+		&-inner
+			height: 100%
+			width: 100%
+			overflow-y: auto
+			+rem(padding-left,75px)
+			+rem(padding-top,35px)
+			+rem(padding-bottom,120px)
+			+rem(margin-top,50px)
+			+rem(padding-right,30px)
+			position: relative
+			z-index: 1
+
+			+r(1024)
+				+rem(margin-top,32px)
+				+rem(padding-left,25px)
+			+r(920)
+				+padlr(25px)
+				padding-top: 0
+				padding-bottom: 0
+				transition: max-height .3s ease-in-out, padding-bottom .3s ease-in-out, margin-top .3s ease-in-out
+				max-height: 0
+				+rem(margin-top,-15px)
+				will-change: max-height
+				backface-visibility: hidden
+			+r(600)
+				+padlr(20px)
+			+r(380)
+				+padlr(12px)
+			+scrollbar
+				background-color: $bl
+				+rem(width,3px)
+			+scrollbar-thumb
+				background-color: rgba(255, 255, 255, 0.5);
+				border-radius: 20px
+				+tr(all .3s)
+			&:hover
+				+scrollbar-thumb
+					background-color: $white
+			a 
+				font-family: $l
+				display: inline-block
+				+tr(color .3s)
+				
+			&>ul 
+				&>li 
+					&:last-child
+						+r(920)
+							+rem(padding-bottom,10px)
+					&> a 
+						color: $white
+						+rem(font-size,20px)
+						+rem(padding-top,15px)
+						+rem(padding-bottom,15px)
+						font-weight: 400
+						+r(600)
+							+rem(padding-top,10px)
+							+rem(padding-bottom,10px)
+							+rem(font-size,18px)
+						&.active
+							font-weight: 600
+						&+ ul
+							+rem(padding-left,20px)
+							+rem(margin-top,2px)
+							+rem(margin-bottom,11px)
+							+r(600)
+								+rem(margin-bottom,0px)
+							&>li 
+								&>a 
+									line-height: 1.75
+									+rem(font-size,16px)
+									color: rgba(255, 255, 255, 0.8)
+									+rem(padding-right,24px)
+									+rem(padding-bottom,8px)
+									&:hover,&.active
+										color: $white
+									&+ ul
+										+rem(padding-left,31px)
+										+rem(margin-bottom,16px)
+										+rem(margin-top,2px)
+										&>li 
+											&>a
+												color: rgba(255, 255, 255, 0.8);
+												+rem(font-size,16px)
+												+rem(padding-left,22px)
+												+rem(padding-top,7px)
+												+rem(padding-bottom,5px)
+												position: relative
+												&:hover,&.active
+													color: $white
+													&:before
+														background-color: $white
+												&:before
+													content: ''
+													display: inline-block
+													background-color: #FFF
+													color: rgba(255, 255, 255, 0.8);
+													+rem(width,5px)
+													+rem(height,5px)
+													border-radius: 50%
+													position: absolute
+													left: 0
+													+rem(top,14px)
+													+tr(background-color .3s)
+
+	&-content
+		width: 100%
+		+rem(padding-right,25px)
+		+r(920)
+			+rem(padding-left,25px)
+		+r(330)
+			+rem(padding-left,20px)
+		&:only-child
+			+rem(padding-left,0)
+			+rem(margin-left,-371px)
+			width: 100vw
+			.doc-content-inner
+				display: block
+				margin: 0 auto
+				+rem(padding-top,20px)
+				+r(600)
+					+rem(padding-bottom,40px)
+			+r(1024)
+				+rem(padding-left,0)
+				+rem(margin-left,-323px)	
+			+r(920)
+				padding-left: 0
+				+padlr(25px)
+				margin: 0
+			
+
+		&-inner
+			+rem(padding-left,35px)
+			+rem(max-width,986px)
+			width: 100%
+			+rem(font-size,16px)
+			font-weight: 300
+			+rem(padding-top,10px)
+			+rem(padding-bottom,20px)
+			color: $textl
+			font-family: $o	
+			+r(600)
+				+rem(font-size,15px)
+				+rem(padding-top,72px)
+			+r(920)
+				padding-left: 0
+				+rem(padding-top,80px)
+			*
+				+scrollbar
+					background-color: transparent
+					+rem(width,3px)
+					+rem(height,3px)
+					margin-bottom: 1px	
+					margin-right: 1px	
+				+scrollbar-thumb
+					background-color: $bl
+					border-radius: 20px
+					+tr(all .3s)
+					opacity: 0	
+				&:hover
+					+scrollbar-thumb
+						opacity: 1		
+
+			h1,h2,h3
+				font-family: $l 
+				font-weight: 300
+				line-height: 1.64
+				display: block
+				+rem(margin-top,49px)
+				+r(1024)
+					+rem(margin-top,39px)
+			h1,h2
+				color: $bl 
+			h1
+				+rem(font-size,36px)
+				+rem(margin-bottom,38px)
+				+r(1024)
+					+rem(margin-bottom,28px)
+				+r(600)
+					+rem(font-size,33px)
+					+rem(margin-bottom,33px)
+			h2
+				+rem(font-size,22px)
+				// +rem(margin-top,0px)
+				+rem(margin-bottom,30px)
+			h3
+				+rem(font-size,16px)
+				font-weight: 600
+				+rem(margin-bottom,21px)
+				color: $textb
+				padding-left: 0
+			h1 + h2
+				+rem(margin-top,-10px)
+			a 
+				color: $or
+				&:hover
+					color: $active2
+				&:active
+					color: $active2
+			p 
+				+rem(font-size,16px)
+				font-weight: 300
+				line-height: 1.75;
+				font-family: $o
+				display: block
+				+rem(max-width,735px)
+				+rem(margin-bottom,20px)
+				+rem(margin-top,20px)
+				+r(340)
+					+rem(font-size,15px)
+			b,strong 
+				font-weight: 600
+			i,em 
+				font-style: italic
+				font-weight: 400
+			li 
+				line-height: 1.75;
+				+rem(margin,12px 0)
+				
+			ul 
+				display: block
+				&>li 
+					position: relative
+					display: block
+					+rem(padding-left,40px)
+					+r(600)
+						+rem(padding-left,20px)
+						&:before
+							+rem(left,8px)
+					&:before
+						content: ''
+						display: inline-block
+						+rem(width,2px)
+						+rem(height,2px)
+						border-radius: 50%
+						background-color: $textb
+						position: absolute
+						left: 0
+						+rem(top,13px)
+						+rem(left,18px)
+					pre
+						+rem(margin,20px 0)
+					// ol
+					// 	li
+					// 		display: inline-block
+			ol 
+				list-style-type: decimal
+				+rem(padding-left,30px)
+
+			pre
+				display: block
+				max-width: 	100%
+				+rem(max-height,400px)	
+				background-color: #f9f9f9;
+				border: solid 1px rgba(148, 149, 154, 0.2);
+				border-radius: 7px
+				code
+					color: #6d6d6d;
+				.token.keyword
+					font-weight: 600
+					color: #6d6d6d;
+			img
+					max-width: 	100%
+					display: block
+					+rem(margin,80px 0)
+					+r(1024)
+						+rem(margin,70px 0)
+					+r(600)
+						+rem(margin,60px 0)
+					+r(380)
+						+rem(margin,40px 0)
+			table
+				width: 100%
+
+				border-collapse: collapse
+				border: none
+
+				th
+					border-top: $bb
+					font-weight: 600
+				tr 
+					border-bottom: $bb
+					&:hover
+						+notouch
+							td
+								background-color: #f4f4f4
+				td,th 
+					width: 10.33%
+					text-align: left
+					vertical-align: middle
+					+padlr(28px)
+					+rem(padding-top,15px)
+					+rem(padding-bottom,15px)
+					font-family: $l
+					// border-bottom: $bb
+					+tr(background-color .2s)
+					border: none !important
+					&:first-child
+						font-weight: 600
+						+rem(max-width,280px)
+					&:last-child
+						word-break: break-word
+						+rem(min-width,300px)
+					+r(1024)
+						+padlr(24px)
+					+r(600)
+						+padlr(20px)
+				tr
+					td 
+						border-top: none
+			blockquote
+				display: block
+				+rem(margin,80px 0)
+				+rem(padding-left,99px)
+				+rem(font-size,16px)
+				line-height: 1.75;
+				position: relative
+				font-weight: 400
+				+rem(max-width,735px)
+				+r(1024)
+					+rem(margin,70px 0)
+					+rem(padding-left,82px)
+					+rem(max-width,550px)
+					&:before
+						+rem(left,60px)
+				+r(600)
+					+rem(padding-left,15px)
+					+rem(margin,60px 0)
+					&:before
+						+rem(left,0px)
+				+r(380)
+					+rem(margin,40px 0)
+				&:before
+					content: ''
+					display: inline-block
+					+rem(top,2px)
+					+rem(bottom,2px)
+					top: 0
+					bottom: 0
+					+rem(width,3px)
+					border-radius: 2px;
+					background-color: $bl
+					position: absolute
+					+rem(left,72px)
+			hr 
+				background: #EAEAEB
+				color: #EAEAEB
+				display: block
+				+rem(margin,40px 0 80px)
+				height: 1px
+				border: none
+				+r(1024)
+					+rem(margin,40px 0 70px)
+				+r(600)
+					+rem(margin,30px 0 60px)
+				+r(380)
+					+rem(margin,30px 0 50px)
+			.scroll-cont
+				width: 100%
+				+rem(margin,80px 0)
+				pre 
+					+rem(max-width,730px)
+				+r(1024)
+					+rem(margin,70px 0)
+					overflow-x: auto
+					table
+						+rem(min-width,600px)
+				+r(600)
+					+rem(margin,60px 0)
+				+r(380)
+					+rem(margin,40px 0)
+
+
+
+.form-msg
+	+rem(font-size,18px)
+	color: $white
+	+rem(margin-bottom,25px)
+	text-align: center
+	
+img[data-action="zoom"]
+	cursor: zoom-in
+
+.zoom-img, .zoom-img-wrap
+	position: relative
+	z-index: 666
+	transition: all 300ms
+
+img.zoom-img
+	cursor: zoom-out
+
+.zoom-overlay
+	z-index: 420
+	background: #fff
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	pointer-events: none
+	filter: "alpha(opacity=0)"
+	opacity: 0
+	transition: opacity 300ms
+
+.zoom-overlay-open .zoom-overlay
+	filter: "alpha(opacity=100)"
+	opacity: 1

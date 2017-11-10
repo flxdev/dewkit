@@ -1,0 +1,225 @@
+extends ../_layout
+
+block title
+	title Documentation
+block config
+	- var main = false
+	- var doc = true
+block content
+	.wrapper.page-head
+		.doc-wrap
+			.doc-inner
+				aside.doc-menu
+					.doc-menu-btn.js-doc-btn
+						.text-up Menu
+						.doc-menu-btn-arr
+							svg(class="icon icon-drop")
+								use(xlink:href="#arrow" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.doc-bg
+					nav.doc-menu-inner
+						ul
+							li 
+								a(href="#") Intro
+							li
+								a(href="#") Architecture
+								ul
+									li
+										a(href="#") Application development with DWKIT
+									li
+										a(href="#") Form request
+									li
+										a(href="#") Get data request
+									li
+										a(href="#") Change data requests
+										ul
+											li
+												a(href="#") Change data requests
+							li
+								a(href="#") Database structure
+								ul
+									li
+										a(href="#") Data Model
+									li
+										a(href="#") Form
+									li
+										a(href="#") Security
+									li
+										a(href="#") Miscellaneous objects
+							li
+								a(href="#") General tutorials
+								ul
+									li
+										a(href="#") How to start with DWKIT
+									li
+										a(href="#") How to add new dictionaries
+									li
+										a(href="#") How to add new business-objects
+									li
+										a(href="#") How to add details (related grid) to business object
+									li
+										a(href="#") How to add attachments to business object
+									li
+										a(href="#") How to make a new workflow
+							li
+								a(href="#") Control panel
+								ul
+									li
+										a(href="#") Data Model
+									li
+										a(href="#") View
+									li
+										a(href="#") Menu
+									li
+										a(href="#") Template
+									li
+										a(href="#") Form
+									li
+										a(href="#") Function
+									li
+										a(href="#") Workflow
+									li
+										a(href="#") Settings
+									li
+										a(href="#") Security
+							li
+								a(href="#") Workspace
+								ul
+									li
+										a(href="#") Main controllers
+									li
+										a(href="#") Client-side objects
+									li
+										a(href="#") Rights of access
+									li
+										a(href="#") Data Model and database synchronization
+							li
+								a(href="#") ORM
+								ul
+									li
+										a(href="#") DynamicRepository
+									li
+										a(href="#") History of records changes
+									li
+										a(href="#") Generation of Grid, Tree, Form
+
+
+
+				.doc-content
+					.doc-content-inner
+						h1 Documentation
+						p Dynamic Workspaces Kit (DWKit) for Microsoft Visual Studio (2013) is a suite of tools for building an Enterprise Software. Using DWKit you can make a working prototype of a project just in one month or less!
+						p Your DevTeam needs some days to learn and understand DWKit.
+						p Following the recommendations you receive a structured project that does not need to be refactored.
+						h1 Documentation
+						h2 Documentation
+						h3 Documentation
+						h1 Typeface
+						p Have you been looking 
+							i for a business process 
+							| management solution that would be as compelling to your  
+							b business users  
+							| as Sharepoint, yet as flexible and customizable as Microsoft Dynamics? Look no further.
+						p To get installation scripts and initial metadata get 
+							a(href="#") DWKITInstall.zip
+						h2 1. Prepare a database
+						p 1.1 Create empty database on MS SQL Server
+						p 1.2 Execute script DWKitScript.sql (for drop all objects use DWKitDropScript.sql)
+						p 1.3 Execute script CreatePersistenceObjects.sql for workflow (for drop DropPersistenceObjects.sql)
+						h3 Key features:
+						ul
+							li Form builder
+							li Document workflow with function of deputies
+							li Dynamic safety system on the basis of groups, roles and permission with Active Directory
+							li Embedded code-editor and compiler (С#) for business functions
+							li Multi-language support
+								ol
+									li Fast 
+										b making 
+										| of the pilot project
+									li Building enterprise systems with Web interface
+									li Building enterprise systems for mobile devices (coming soon)
+							li Creating interfaces for third-party systems
+								ul
+									li Form builder
+									li Document workflow with function of deputies
+									li Dynamic safety system on the basis of groups, roles and permission with Active Directory
+							li Technologies: .NET Framework (C#), ASP.NET MVC, Sencha ExtJS, WorkflowEngine.NET.
+							li Browser Compatibility: IE, Chome, FireFox, Safari.
+							li Database providers: MS SQL Server, PosgreSQL, Oracle
+						hr
+						ol
+							li Fast making of the pilot project
+							li Building enterprise systems with Web interface
+							li Building enterprise systems for mobile devices (coming soon)
+							li Creating interfaces for third-party systems
+						table
+							tbody
+								tr
+									th Column name
+									th Column type
+									th Column type
+								tr 
+									td id
+									td int NOT NULL
+									td Primary key
+								tr 
+									td Name
+									td nvarchar(50) NOT NULL
+									td Name of the Menu type
+						blockquote Dynamic Workspaces Kit (DWKit) for Microsoft Visual Studio (2013) is a suite of tools for building an Enterprise Software. Using DWKit you can make a working prototype of a project just in one month or less!
+						img(src="/img/img.jpg", alt="img")
+						pre.language-csharp
+							code.language-csharp
+								| InvoiceNumber: set Order = 2, Width = 100, Show = checked, Edit = checked
+								| Comment: set Order = 3, Width = 150, Show = checked, Edit = checked
+								| InvoiceDate: set Order = 4, Width = 100, Show = checked, Edit = checked
+								| Amount: set Order = 5, Width = 100, Show = checked, Edit = checked
+								| State: set Order = 6, Width = 100, Show = checked, Edit = unchecked
+								| ProjectId: Show = unchecked, Edit = checked
+						pre.language-csharp
+							code.language-csharp
+								| using System;
+								| using System.Xml.Linq;
+								| using OptimaJet.Workflow.Core.Builder;
+								| using OptimaJet.Workflow.Core.Bus;
+								| using OptimaJet.Workflow.Core.Runtime;
+								| using OptimaJet.Workflow.DbPersistence;
+								| namespace Business
+								| {
+								|     public static class WorkflowInit
+								|     {
+								|         private static readonly Lazy <WorkflowRuntime> 
+								|         public static WorkflowRuntim345345 35345345345345345343453453453453453453453453453453453453453453453453453453453453453453e Runtime
+								|         {
+								|             get { return LazyRuntime.Value; }
+
+						pre.language-csharp
+							code.language-csharp
+								| using System;
+								| using System.Xml.Linq;
+								| using OptimaJet.Workflow.Core.Builder;
+								| using OptimaJet.Workflow.Core.Bus;
+								| using OptimaJet.Workflow.Core.Runtime;
+								| using OptimaJet.Workflow.DbPersistence;
+								| namespace Business
+								| {
+								|     public static class WorkflowInit
+								|     {
+								|         private static readonly Lazy<WorkflowRuntime> 
+								|         public static WorkflowRuntime Runtime
+								|         {
+								|             get { return LazyRuntime.Value; }
+	
+	script(src="/js/lib/prism.js")
+
+
+
+
+
+
+
+
+
+
+
+	

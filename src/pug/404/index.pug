@@ -1,0 +1,20 @@
+extends ../_layout
+
+block title
+	title 404
+block config
+	- var main = false
+	- var demo = true
+block content
+	.wrapper.blue.page-head.demo
+		.message-wrap
+			.message-inner.text-center
+				.message-title
+					.title.h1.extra 404
+				.message-text
+					.text The page you requested does not exist, or it has been moved. Anyways, we suggest you visit our homepage. You’ll surely find the droids you’re looking for there.
+				.message-btn
+					.btn.white2
+						span 
+							<svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11"><path fill-opacity=".9" fill-rule="evenodd" d="M16.4576929 4.9011616l-14.7221237.1449518L6.1436581.8614762c.2070345-.1972981.2070345-.5167091 0-.7135026-.2070346-.1972981-.5422082-.1972981-.7487133 0L.1528932 5.1429964c-.2038576.1942705-.2038576.5192321 0 .7135026l5.2420516 4.9955274c.2070346.1972981.5422082.1972981.7487133 0 .2070345-.1972981.2070345-.5167091 0-.7135026L1.7355692 6.0553109h14.7349306c.2922841 0 .5295002-.2260602.5295002-.5045987 0-.2785385-.250023-.6495506-.5423071-.6495506z"/></svg>
+							| Visit homepage
